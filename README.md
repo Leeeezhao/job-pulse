@@ -1,5 +1,6 @@
 # job-pulse — 2026 校招算法岗情报站（实测版 v14）
 
+> **v15：添加 7 家游戏/安全/芯片/医疗公司**
 > **v14：扩展 12 家中型企业 + 美团系共享 URL**
 > **v13：发现 OPPO 完整校招系统 + 3 个调度 API**
 > **实测日期**：2026-07-07
@@ -69,6 +70,18 @@
 | 猿辅导 | `hr.yuanfudao.com` | 教育 |
 
 **美团系共享 URL**（v14 发现）: `zhaopin.meituan.com/web/position?hiringType=4_1&keyword=X` 同时适用于大众点评 / 猫眼 / 美团酒旅。
+
+## 🆕 v15 新增 7 家
+
+| 公司 | 行业 | URL | 备注 |
+|---|---|---|---|
+| 网易互娱 | 游戏 | `game.campus.163.com` | 阴阳师公测校招, body=628 |
+| 三七互娱 | 游戏 | `zhaopin.37.com/?c=campus&a=index` | 含 AI类 / 游戏研发 / 技术开发 |
+| 西山居 | 游戏 | `job.seasungames.cn/campus` | 剑网3/解限机, 训练营+应届+实习 |
+| 叠纸 | 游戏 | `papegames.com/career` | 无限暖暖/恋与制作人 |
+| 深信服 | 安全 | `hr.sangfor.com/campuszp` | 校招入口 + X-STAR 顶尖人才 |
+| 摩尔线程 | 芯片/GPU | `mthreads.com/career` | 信创 GPU, 营销主页 |
+| 阿里健康 | 医疗 | `alihealth.cn/career` | 阿里系, 加入我们 |
 
 ## 🎯 v9/v10 实习过滤关键发现
 

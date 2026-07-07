@@ -1,8 +1,8 @@
 # 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v3）
 
-> **v14：添加 12 家中型企业（快手携程360虎牙鹰角Keep飞书元戎启行等）+ 美团系共享 URL**
+> **v15：添加 7 家中型企业（网易互娱/三七互娱/西山居/叠纸/深信服/摩尔线程/阿里健康）**
 > **实测日期**：2026-07-07
-> **实测公司**：37+ 家（v3-v14 累计）
+> **实测公司**：44+ 家（v3-v15 累计）
 > **实测结果**：✅ 12 家 URL 搜索真实有效（含快手、美团系、飞书系、理想 functionsids、Moka 系、字节 project ID），其余 🏠 需进站内搜
 
 ## ⚠️ 重要说明
@@ -501,7 +501,79 @@
 
 ---
 
-## 📊 完整实测结论 (v3-v14, Playwright + Chromium)
+## 27. 网易互娱 — ✅ 校招主页完整 (v15 游戏)
+
+**v15 实测**：`game.campus.163.com` body=628
+
+- **校招主页**：<https://game.campus.163.com>
+
+**招聘流程**: 网申/内推 1月起 → 笔试 1月下旬起 → 面试 2月上旬起 → OFFER
+
+---
+
+## 28. 三七互娱 — ✅ 校招入口 (v15 游戏)
+
+**v15 实测**：
+
+- **招聘主页**：<https://zhaopin.37.com> body=4225
+- **校招页 (推荐)**：<https://zhaopin.37.com/index.php?m=Home&c=campus&a=index> body=354
+  - 岗位类型: **AI类** / 游戏策划类 / 游戏研发类 / 游戏运营类 / 市场推广类 / 技术开发类 / 美术设计类 / 职能管理类
+  - 地点: 广州 / 厦门 / 武汉 / 北京 / 上海 / 苏州
+
+---
+
+## 29. 西山居 — ✅ 校招系统完整 (v15 游戏)
+
+**v15 实测**：西山居（金山旗下游戏工作室，剑网3 / 解限机 / 尘白禁区）独立校招站
+
+- **校招主页 (实际可用)**：<https://job.seasungames.cn/campus> body=1532
+- **招聘项目**：应届生招聘 1 / 训练营招聘 15 / 实习生招聘 13
+- **职位分类**：美术音频 0 / 产品策划 1 / 程序质量 0 / 运营发行 0 / 职能综合 1
+
+**v15 注意事项**：`hr.xishanju.com` 只是入口，真正的校招站是 `job.seasungames.cn/campus`
+
+---
+
+## 30. 叠纸游戏 — ✅ 公司主页含招聘 (v15 游戏)
+
+**v15 实测**：`www.papegames.com/career` body=2115 (含 加入我们 + 产品介绍)
+
+- **招聘主页**：<https://www.papegames.com/career>
+
+**v15 备注**：叠纸游戏 Moka (app.mokahr.com/apply/papegames) 已关停，应使用主站点
+
+---
+
+## 31. 深信服 — 🏠 校招入口 (v15 安全)
+
+**v15 实测**：
+
+- **招聘主页**：<https://hr.sangfor.com> body=1516
+- **校招主页**：<https://hr.sangfor.com/campuszp> body=179 (含 X-STAR 顶尖人才)
+- **产品领域**：网络安全 / 云计算 / 企业级无线
+
+---
+
+## 32. 摩尔线程 — 🏠 公司主页 (v15 芯片/GPU)
+
+**v15 实测**：
+
+- **公司主页**：<https://www.mthreads.com/career> body=969
+- **产品**: 全功能 GPU / 显卡 (MTT S80/S70) / 智算中心 / AI 模组
+- **v15 备注**：页面是产品展示页，招聘入口需在 `career` 页上找链接，**不适合直采**
+
+---
+
+## 33. 阿里健康 — 🏠 公司主页 (v15 医疗)
+
+**v15 实测**：
+
+- **公司主页**：<https://www.alihealth.cn/career> body=497
+- **v15 备注**：有 "加入我们" 入口，但实际招聘入口需进主站内搜
+
+---
+
+## 📊 完整实测结论 (v3-v15, Playwright + Chromium)
 
 | 公司 | 实测类型 | 备注 |
 |---|---|---|
@@ -528,6 +600,13 @@
 | 华为 | 🏠 career.huawei.com | **强制登录**, 需 uniportal.huawei.com |
 | 小米 | 🏠 hr.xiaomi.com/campus/list | 2018 年过期数据 |
 | OPPO | ✅ `/university/oppo/campus` (项目入口页, 25 岗) | 2026 应届校招未启动, 只有博士 + 2027 实习 |
+| 网易互娱 (游戏) | ✅ `game.campus.163.com` | 完整校招, body=628 |
+| 三七互娱 (游戏) | ✅ 校招入口 `?c=campus&a=index` | 含 AI类 + 游戏研发类 + 技术开发类 |
+| 西山居 (游戏) | ✅ `job.seasungames.cn/campus` | 3 项目 29 岗, body=1532 |
+| 叠纸 (游戏) | 🏠 `papegames.com/career` | 公司主页含招聘, Moka 已关停 |
+| 深信服 (安全) | 🏠 `hr.sangfor.com/campuszp` | 校招入口 + X-STAR |
+| 摩尔线程 (芯片) | 🏠 `mthreads.com/career` | 营销主页, 无直接招聘列表 |
+| 阿里健康 (医疗) | 🏠 `alihealth.cn/career` | 公司主页, 无直接招聘入口 |
 | 快手 | 🏠 campus.kuaishou.cn | 主页是营销页 |
 
 ## 关键经验
