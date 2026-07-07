@@ -2,12 +2,12 @@
 
 > **v3 重写**：基于 Playwright 实测，去掉所有"猜测的"URL 搜索参数
 > **实测日期**：2026-07-07
-> **实测公司**：18 家（v3 的字节/美团/腾讯/知乎 + v7 的百度/京东/华为/OPPO/vivo/大疆/小米/快手/小鹏/理想/小红书/得物/蔚来/滴滴）
-> **实测结果**：✅ 5 家 URL 搜索真实有效，❌ 4 家 URL 失效，其余 🏠 需站内搜索
+> **实测公司**：25+ 家（v3-v12 累计）
+> **实测结果**（v12）：✅ 8 家 URL 搜索真实有效（含飞书系蔚来/小鹏 + 理想 functionsids），其余 🏠 需进站内搜
 
 ## ⚠️ 重要说明
 
-通过实际打开浏览器测试，**只有 5 家公司的 URL 搜索参数真实生效**：
+通过实际打开浏览器测试（v3-v12 累计 25 家公司），**以下 8 家公司 URL 搜索参数真实生效**：
 
 | 公司 | 真实 URL 模板 | 实测状态 |
 |---|---|---|
@@ -16,10 +16,13 @@
 | **腾讯** | `?keyword={方向}` | ✅ 实测确认 |
 | **知乎（Moka）** | `#/jobs?keyword={方向}` | ✅ 实测确认 |
 | **vivo** | `/home` (URL 不变, 前端 JS 搜索) | ✅ 实测确认 |
-| **智谱 / 月之暗面 / MiniMax / 百川（Moka / 飞书系）** | `#/jobs?keyword={方向}` 或 `?keyword={方向}` | ✅ 实测确认 (URL 形式与知乎/字节一致) |
+| **蔚来（飞书系）** | `?keyword={方向}` | ✅ v12 实测 |
+| **小鹏（飞书系）** | `?keyword={方向}` | ✅ v12 实测 |
+| **理想汽车** | `?project_id=4&functionsids={分类ID}` | ✅ v12 实测 (函数 ID 代替关键词) |
+| **滴滴（Moka）** | `#/jobs?project=2027` (项目筛代替关键词) | ✅ v12 实测 |
+| **智谱 / 月之暗面 / MiniMax / 百川（Moka / 飞书系）** | `#/jobs?keyword={方向}` 或 `?keyword={方向}` | ✅ 实测确认 |
 
-**其他 11+ 家公司的 URL 搜索参数被测试证明无效**（关键词被忽略，跳默认列表）。
-对这些公司，**正确的做法是直接给主页链接**，让用户进首页用站内搜索。
+**其他 10+ 家公司 URL 搜索参数被测试证明无效**（关键词被忽略，跳默认列表）。对这些公司，**正确的做法是直接给主页链接**，让用户进首页用站内搜索。
 
 ## 字段说明
 
@@ -182,14 +185,103 @@
 
 ---
 
-## 9. 滴滴 — 未实测
+## 9. 滴滴 — ✅ Moka 系统 (v12)
 
-- **校招官网**：<https://campus.didiglobal.com/>
-- **方向**：推荐 / 地图算法 / 自动驾驶 / 运筹优化 / 风控 / NLP
+**v12 实测结果**：`?project=2027` 选"2027 届校招项目"返 6 个岗位；默认搜索返 0 个项目实际仍可看职位。
+
+- **校招官网**：<https://campus.didiglobal.com/campus_apply/didiglobal/96064#/jobs?project=2027>
+
+| 方向 | 工作地 | 链接 | 类型 |
+|---|---|---|---|
+| 推荐 | 北京 | <https://campus.didiglobal.com/campus_apply/didiglobal/96064#/jobs?project=2027> | 🔍 |
+| 自动驾驶决策控制 | 北京/上海 | <https://campus.didiglobal.com/campus_apply/didiglobal/96064#/jobs?project=2027> | 🔍 |
+| Physical AI 多模态大模型 | 北京 | <https://campus.didiglobal.com/campus_apply/didiglobal/96064#/jobs?project=2027> | 🔍 |
+| 自动驾驶感知定位 | 北京/上海 | <https://campus.didiglobal.com/campus_apply/didiglobal/96064#/jobs?project=2027> | 🔍 |
 
 ---
 
 ## 10. 快手 — 🏠 主页=营销页 (Playwright 实测)
+
+- **校招官网**：<https://campus.kuaishou.cn/>（主页是营销页，需点"校园招聘"按钮）
+
+---
+
+## 10a. 蔚来 — ✅ URL搜索有效 (v12 飞书系)
+
+**v12 实测结果**：`?keyword=推荐` 返 15 个岗位（1 个实习 = 7%）。`?keyword=NLP` 返 7 个（0 实习）。
+
+- **校招官网**：<https://nio.jobs.feishu.cn?keyword=%E6%8E%A8%E8%8D%90>
+
+| 方向 | 链接 | 类型 |
+|---|---|---|
+| 推荐 | <https://nio.jobs.feishu.cn?keyword=%E6%8E%A8%E8%8D%90> | 🔍 |
+| NLP | <https://nio.jobs.feishu.cn?keyword=NLP> | 🔍 |
+| 自动驾驶 | <https://nio.jobs.feishu.cn?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6> | 🔍 |
+| 智能座舱 | <https://nio.jobs.feishu.cn?keyword=%E6%99%BA%E8%83%BD%E5%BA%A7%E8%88%8D> | 🔍 |
+
+---
+
+## 10b. 小鹏 — ✅ URL搜索有效 (v12 飞书系)
+
+**v12 实测结果**：`?keyword=推荐` 返 2 个算法相关岗位（0 实习）。主页还有“自动驾驶 / 智能座舱 / 数据智能”等 12 个板块但 URL 不能锁板块。
+
+- **校招官网**：<https://xiaopeng.jobs.feishu.cn?keyword=%E6%8E%A8%E8%8D%90>
+
+| 方向 | 链接 | 类型 |
+|---|---|---|
+| 推荐/算法 | <https://xiaopeng.jobs.feishu.cn?keyword=%E6%8E%A8%E8%8D%90> | 🔍 |
+| 自动驾驶 | <https://xiaopeng.jobs.feishu.cn?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6> | 🔍 |
+| 智能机器人 | <https://xiaopeng.jobs.feishu.cn?keyword=%E6%9C%BA%E5%99%A8%E4%BA%BA> | 🔍 |
+
+---
+
+## 10c. 理想汽车 — ✅ URL搜索有效 (v12 functionsids)
+
+**v12 实测发现**：`https://www.lixiang.com/employ/campus/list.html?project_id=4&functionsids=1` 完美过滤 → 返 **28 个算法与软件岗位**。
+- `project_id=4` = 2026 校招项目（默认是 “校招与实习职位”）
+- `functionsids=1` = 算法与软件 / `3` = 算法 / `4` = 软件测试 等
+- 这是项目 ID + 职位分类 ID，**不是关键字搜索**。
+
+- **校招主页**：<https://www.lixiang.com/employ/campus.html/?fromJob=1>
+- **算法与软件**：<https://www.lixiang.com/employ/campus/list.html?project_id=4&functionsids=1> (28 个)
+- **整车研发**：<https://www.lixiang.com/employ/campus/list.html?project_id=4&functionsids=2> (37 个)
+- **芯片研发**：<https://www.lixiang.com/employ/campus/list.html?project_id=4&functionsids=3> (24 个)
+
+---
+
+## 10d. 小红书 — 🏠 校招子站 (v12)
+
+**v12 实测结果**：`https://job.xiaohongshu.com/campus/positions` 返 “热招职位”列表（涉及算法/AI产品等），但 `?keyword=推荐` 等参数被忽略（返同样 3-10 个最新热招职位）。
+
+- **校招官网**：<https://job.xiaohongshu.com/campus/positions>
+
+| 方向 | 入口 | 类型 |
+|---|---|---|
+| 热招职位 | <https://job.xiaohongshu.com/campus/positions> | 🏠 |
+| REDstar 顶尖校招 | 主页点击 “立即投递” | 🏠 |
+
+---
+
+## 10e. 大疆 — 🏠 校招子站 (v12)
+
+**v12 实测结果**：`https://careers.dji.com/zh-CN/campus/positions` 可访问。需点“查看在招职位”进入详细职位列表（不需登录，但需点几个页面）。
+
+- **校招主页**：<https://we.dji.com/zh-CN/campus/>
+- **职位列表**：<https://careers.dji.com/zh-CN/campus/positions>
+
+---
+
+## 10f. 得物 — 🏠 营销页 (v12)
+
+**v12 实测结果**：`https://app.mokahr.com/apply/dewu/0` 返 “您访问的页面不存在”。`https://www.dewu.com/career` 返营销页（body=956 char）。Moka 子页 lottery：genze002
+
+- **招聘主页**：<https://www.dewu.com/career>
+
+> 可同时查 BOSS直聘 / 内推群
+
+---
+
+
 
 - **校招官网**：<https://campus.kuaishou.cn/>（主页是营销页，需点"校园招聘"按钮）
 
@@ -254,31 +346,30 @@
 
 ---
 
-## 📊 完整实测结论 (v3-v7, Playwright + Chromium)
+## 📊 完整实测结论 (v3-v12, Playwright + Chromium)
 
 | 公司 | 实测类型 | 备注 |
 |---|---|---|
-| 字节跳动 | ✅ URL 搜索有效 | `?keywords=X` 真实过滤 |
-| 美团 | ✅ URL 搜索有效 | `?hiringType=4_1&keyword=X` 应届校招项目 0实习 |
+| 字节跳动 | ✅ URL 搜索有效 | `?keywords=X&project=7525009396952582407,7621018151002507573` (去实习) |
+| 美团 | ✅ URL 搜索有效 | `/web/position?hiringType=4_1&keyword=X` (应届校招项目, 0实习) |
 | 腾讯 | ✅ URL 搜索有效 | `?keyword=X` 真实过滤 |
 | 知乎 (Moka) | ✅ URL 搜索有效 | `#/jobs?keyword=X` |
 | vivo | ✅ URL 搜索有效 | URL 不变, 前端 JS 搜索 (搜"推荐"返回 33 个, 搜"NLP"返回 16 个) |
-| 阿里巴巴 | ❌ URL 失效 | `?keywords=X` 跳默认列表 |
-| 拼多多 | ❌ URL 失效 | `?keywords=X` 无过滤 |
-| 蔚来 | ❌ URL 失效 | `?keyword=X` 无过滤 |
-| 滴滴 | ❌ URL 失效 | `?keyword=X` 无过滤 |
-| 百度 | 🏠 主页/营销页 | 无搜索框 |
-| 京东 | 🏠 需站内搜索 | 有搜索框但 fill 超时 |
-| 华为 | 🏠 主页/营销页 | 无搜索框 |
-| 小米 | 🏠 需站内搜索 | 主页即结果页 |
-| 理想 | 🏠 需站内搜索 | 有搜索框但 fill 超时 |
-| 蔚来 | 🏠 需站内搜索 | URL 跳 #/ 但无效 |
-| 滴滴 | 🏠 需站内搜索 | 同上 |
-| OPPO | 🏠 校招子站 | careers.oppo.com/university/oppo/ |
-| 大疆 | 🏠 校招子站 | we.dji.com/zh-CN/campus/ |
-| 小红书 | 🏠 校招子站 | careers.xiaohongshu.com/positions (主页是项目入口, 点 "立即投递" 进详情) |
-| 小鹏 | 🏠 营销页 | join.html 是车介绍页 |
-| 快手 | 🏠 营销页 | 主页是校招宣传页 |
+| 蔚来（飞书系） | ✅ URL 搜索有效 | `?keyword=X` (v12, 搜"推荐"返 15 个, 1 实习) |
+| 小鹏（飞书系） | ✅ URL 搜索有效 | `?keyword=X` (v12) |
+| 理想汽车 | ✅ functionsids 过滤 | `?project_id=4&functionsids=1` 返 28 个算法岗 (v12) |
+| 滴滴（Moka） | ✅ project 筛 | `#/jobs?project=2027` 返 6 个 (v12) |
+| 阿里巴巴 | 🏠 talent.taotian.com | 主页是项目入口, 需进站内搜 |
+| 拼多多 | 🏠 career.pinduoduo.com | 营销页, 仅列出 "App专享优惠" |
+| 得物 | 🏠 dewu.com/career | Moka 404, dewu.com 是营销页 |
+| 小红书 | 🏠 job.xiaohongshu.com/campus/positions | 返 "热招职位", URL 参数被忽略 |
+| 大疆 | 🏠 careers.dji.com/zh-CN/campus/positions | 需点 "查看在招职位" |
+| 百度 | 🏠 talent.baidu.com | `{"status":"need-login"}` 反爬 |
+| 京东 | 🏠 campus.jd.com/#/jobs | URL 参数被忽略 |
+| 华为 | 🏠 career.huawei.com | **强制登录**, 需 uniportal.huawei.com |
+| 小米 | 🏠 hr.xiaomi.com/campus/list | 2018 年过期数据 |
+| OPPO | 🏠 careers.oppo.com | 全是营销页 |
+| 快手 | 🏠 campus.kuaishou.cn | 主页是营销页 |
 
 ## 关键经验
 
