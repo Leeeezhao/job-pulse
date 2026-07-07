@@ -47,19 +47,19 @@
 
 | 公司 | 入口 | 启动时间 | 实习时长 | 备注 |
 |---|---|---|---|---|
-| **字节跳动 ByteIntern** | <https://jobs.bytedance.com/> | 2026 春 | 3 个月+ | 转正率 >50% |
-| **阿里巴巴** | <https://talent-holding.alibaba.com/> | 2026 春 | 2 个月+ | 3000+ 岗位 |
-| **腾讯** | <https://join.qq.com/> | 2026 春 | 2 个月+ | 技术类扩招 36% |
-| **美团** | <https://zhaopin.meituan.com/web/campus> | 2026 春 | 2 个月+ | 含日常实习 |
-| **京东** | <https://campus.jd.com/home> | 2026 春 | 2 个月+ | 1.5 万实习岗位 |
-| **百度** | <https://talent.baidu.com/jobs/> | 2025 暑期 | 3 个月+ | 含日常实习 |
+| **字节跳动 ByteIntern** | <https://jobs.bytedance.com/campus/position?keywords=%2A%2A%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%20ByteIntern%2A%2A> | 2026 春 | 3 个月+ | 转正率 >50% |
+| **阿里巴巴** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%2A%2A> | 2026 春 | 2 个月+ | 3000+ 岗位 |
+| **腾讯** | <https://join.qq.com/post.html?query=p_1&keyword=%2A%2A%E8%85%BE%E8%AE%AF%2A%2A> | 2026 春 | 2 个月+ | 技术类扩招 36% |
+| **美团** | <https://zhaopin.meituan.com/web/position?keywords=%2A%2A%E7%BE%8E%E5%9B%A2%2A%2A> | 2026 春 | 2 个月+ | 含日常实习 |
+| **京东** | <https://campus.jd.com/jobs?keyword=%2A%2A%E4%BA%AC%E4%B8%9C%2A%2A> | 2026 春 | 2 个月+ | 1.5 万实习岗位 |
+| **百度** | <https://talent.baidu.com/jobs?keyword=%2A%2A%E7%99%BE%E5%BA%A6%2A%2A> | 2025 暑期 | 3 个月+ | 含日常实习 |
 | **快手** | <https://campus.kuaishou.cn/> | 2026 春 | 2 个月+ | 快 Star-X 优先 |
 | **拼多多** | <https://careers.pinduoduo.com/campus/intern> | 2026 春 | 2 个月+ | 算法岗紧缺 |
-| **小红书** | <https://campus.xiaohongshu.com/> | 2026 春 | 2 个月+ | 推荐算法热门 |
+| **小红书** | <https://campus.xiaohongshu.com/positions?keywords=%2A%2A%E5%B0%8F%E7%BA%A2%E4%B9%A6%2A%2A> | 2026 春 | 2 个月+ | 推荐算法热门 |
 | **大疆** | <https://we.dji.com/zh-CN/campus> | 2026 春 | 2 个月+ | 2027 拓疆者 |
 | **蔚来** | <https://campus.nio.com/> | 2026 春 | 2 个月+ | 自动驾驶 |
 | **小鹏** | <https://www.xiaopeng.com/recruit.html> | 2026 春 | 2 个月+ | AI 岗百万 |
-| **理想** | <https://www.lixiang.com/recruit> | 2026 春 | 2 个月+ | - |
+| **理想** | <https://www.lixiang.com/recruit/position?keyword=%2A%2A%E7%90%86%E6%83%B3%2A%2A> | 2026 春 | 2 个月+ | - |
 
 ### 2.2 暑期实习时间线（以字节为例）
 - **3-4 月**：投递（推荐算法 4 月开启）

@@ -17,29 +17,29 @@
 #### 1.2.1 推荐算法（核心）
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 推荐算法工程师-社区 | 社区推荐 | <https://campus.xiaohongshu.com/> |
-| 推荐算法工程师-电商 | 电商推荐 | <https://campus.xiaohongshu.com/> |
-| 推荐算法工程师-笔记 | 笔记推荐 | <https://campus.xiaohongshu.com/> |
-| 推荐算法工程师-直播 | 直播推荐 | <https://campus.xiaohongshu.com/> |
-| 推荐算法实习生 | 召回/排序/策略 | <https://campus.xiaohongshu.com/> |
+| 推荐算法工程师-社区 | 社区推荐 | <https://campus.xiaohongshu.com/positions?keywords=%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E7%A4%BE%E5%8C%BA> |
+| 推荐算法工程师-电商 | 电商推荐 | <https://campus.xiaohongshu.com/positions?keywords=%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E7%94%B5%E5%95%86> |
+| 推荐算法工程师-笔记 | 笔记推荐 | <https://campus.xiaohongshu.com/positions?keywords=%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E7%AC%94%E8%AE%B0> |
+| 推荐算法工程师-直播 | 直播推荐 | <https://campus.xiaohongshu.com/positions?keywords=%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E7%9B%B4%E6%92%AD> |
+| 推荐算法实习生 | 召回/排序/策略 | <https://campus.xiaohongshu.com/positions?keywords=%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%AE%9E%E4%B9%A0%E7%94%9F> |
 
 #### 1.2.2 NLP / 多模态
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| NLP 算法工程师-社区技术部 | 文本理解/生成/Query | <https://campus.xiaohongshu.com/> |
-| NLP 算法工程师-搜索 | 搜索 Query | <https://campus.xiaohongshu.com/> |
-| NLP 算法工程师-推荐 | 推荐 | <https://campus.xiaohongshu.com/> |
-| NLP 算法工程师-电商 | 电商文本 | <https://campus.xiaohongshu.com/> |
-| NLP 算法工程师-生态治理 | 内容审核 | <https://campus.xiaohongshu.com/> |
-| 多模态算法工程师 | 多模态 | <https://campus.xiaohongshu.com/> |
-| 计算机视觉 & 多模态算法工程师 | 视觉 | <https://campus.xiaohongshu.com/> |
+| NLP 算法工程师-社区技术部 | 文本理解/生成/Query | <https://campus.xiaohongshu.com/positions?keywords=NLP%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E7%A4%BE%E5%8C%BA%E6%8A%80%E6%9C%AF%E9%83%A8> |
+| NLP 算法工程师-搜索 | 搜索 Query | <https://campus.xiaohongshu.com/positions?keywords=NLP%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E6%90%9C%E7%B4%A2> |
+| NLP 算法工程师-推荐 | 推荐 | <https://campus.xiaohongshu.com/positions?keywords=NLP%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E6%8E%A8%E8%8D%90> |
+| NLP 算法工程师-电商 | 电商文本 | <https://campus.xiaohongshu.com/positions?keywords=NLP%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E7%94%B5%E5%95%86> |
+| NLP 算法工程师-生态治理 | 内容审核 | <https://campus.xiaohongshu.com/positions?keywords=NLP%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E7%94%9F%E6%80%81%E6%B2%BB%E7%90%86> |
+| 多模态算法工程师 | 多模态 | <https://campus.xiaohongshu.com/positions?keywords=%E5%A4%9A%E6%A8%A1%E6%80%81%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 计算机视觉 & 多模态算法工程师 | 视觉 | <https://campus.xiaohongshu.com/positions?keywords=%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%20%26%20%E5%A4%9A%E6%A8%A1%E6%80%81%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 #### 1.2.3 搜索 / 广告
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 搜索算法工程师 | 搜索 | <https://campus.xiaohongshu.com/> |
-| 广告算法工程师 | 广告 | <https://campus.xiaohongshu.com/> |
-| 风控算法工程师 | 风控 | <https://campus.xiaohongshu.com/> |
+| 搜索算法工程师 | 搜索 | <https://campus.xiaohongshu.com/positions?keywords=%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 广告算法工程师 | 广告 | <https://campus.xiaohongshu.com/positions?keywords=%E5%B9%BF%E5%91%8A%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 风控算法工程师 | 风控 | <https://campus.xiaohongshu.com/positions?keywords=%E9%A3%8E%E6%8E%A7%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 ### 1.3 公司背景
 - 工作地：北京/上海
@@ -58,23 +58,23 @@
 #### 2.2.1 推荐 / 搜索 / 广告
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 推荐算法工程师-主站 | 主站推荐 | <https://jobs.bilibili.com/> |
-| 推荐算法工程师-直播 | 直播推荐 | <https://jobs.bilibili.com/> |
-| 搜索算法工程师 | 搜索 | <https://jobs.bilibili.com/> |
-| 广告算法工程师 | 广告 | <https://jobs.bilibili.com/> |
+| 推荐算法工程师-主站 | 主站推荐 | <https://jobs.bilibili.com/positions?keywords=%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E4%B8%BB%E7%AB%99> |
+| 推荐算法工程师-直播 | 直播推荐 | <https://jobs.bilibili.com/positions?keywords=%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E7%9B%B4%E6%92%AD> |
+| 搜索算法工程师 | 搜索 | <https://jobs.bilibili.com/positions?keywords=%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 广告算法工程师 | 广告 | <https://jobs.bilibili.com/positions?keywords=%E5%B9%BF%E5%91%8A%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 #### 2.2.2 视频 / 视觉
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 视频算法工程师 | 视频理解/编解码 | <https://jobs.bilibili.com/> |
-| 计算机视觉算法工程师 | CV/视频 | <https://jobs.bilibili.com/> |
-| AIGC 视频算法工程师 | 视频生成 | <https://jobs.bilibili.com/> |
+| 视频算法工程师 | 视频理解/编解码 | <https://jobs.bilibili.com/positions?keywords=%E8%A7%86%E9%A2%91%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 计算机视觉算法工程师 | CV/视频 | <https://jobs.bilibili.com/positions?keywords=%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| AIGC 视频算法工程师 | 视频生成 | <https://jobs.bilibili.com/positions?keywords=AIGC%20%E8%A7%86%E9%A2%91%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 #### 2.2.3 NLP
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| NLP 算法工程师-弹幕理解 | NLP/弹幕 | <https://jobs.bilibili.com/> |
-| NLP 算法工程师-评论 | 评论 | <https://jobs.bilibili.com/> |
+| NLP 算法工程师-弹幕理解 | NLP/弹幕 | <https://jobs.bilibili.com/positions?keywords=NLP%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E5%BC%B9%E5%B9%95%E7%90%86%E8%A7%A3> |
+| NLP 算法工程师-评论 | 评论 | <https://jobs.bilibili.com/positions?keywords=NLP%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E8%AF%84%E8%AE%BA> |
 
 ### 2.3 公司背景
 - 工作地：上海/北京
@@ -93,16 +93,16 @@
 #### 3.2.1 推荐 / 搜索
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 推荐算法工程师-首页 | 首页推荐 | <https://app.mokahr.com/apply/zhihu> |
-| 推荐算法工程师-热榜 | 热榜 | <https://app.mokahr.com/apply/zhihu> |
-| 搜索算法工程师 | 搜索 | <https://app.mokahr.com/apply/zhihu> |
+| 推荐算法工程师-首页 | 首页推荐 | <https://app.mokahr.com/apply/zhihu?keyword=%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E9%A6%96%E9%A1%B5> |
+| 推荐算法工程师-热榜 | 热榜 | <https://app.mokahr.com/apply/zhihu?keyword=%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E7%83%AD%E6%A6%9C> |
+| 搜索算法工程师 | 搜索 | <https://app.mokahr.com/apply/zhihu?keyword=%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 #### 3.2.2 NLP / 内容理解
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| NLP 算法工程师 | 文本 | <https://app.mokahr.com/apply/zhihu> |
-| 内容理解算法工程师 | CV/NLP | <https://app.mokahr.com/apply/zhihu> |
-| 大模型算法工程师 | LLM | <https://app.mokahr.com/apply/zhihu> |
+| NLP 算法工程师 | 文本 | <https://app.mokahr.com/apply/zhihu?keyword=NLP%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 内容理解算法工程师 | CV/NLP | <https://app.mokahr.com/apply/zhihu?keyword=%E5%86%85%E5%AE%B9%E7%90%86%E8%A7%A3%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 大模型算法工程师 | LLM | <https://app.mokahr.com/apply/zhihu?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 ### 3.3 公司背景
 - 工作地：北京
@@ -121,15 +121,15 @@
 #### 4.2.1 推荐 / 搜索
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 推荐算法工程师 | 推荐 | <https://app.mokahr.com/apply/dewu> |
-| 搜索算法工程师 | 搜索 | <https://app.mokahr.com/apply/dewu> |
-| 算法工程师-Java 方向 | 搜索/推荐 | <https://app.mokahr.com/apply/dewu> |
+| 推荐算法工程师 | 推荐 | <https://app.mokahr.com/apply/dewu?keyword=%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 搜索算法工程师 | 搜索 | <https://app.mokahr.com/apply/dewu?keyword=%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 算法工程师-Java 方向 | 搜索/推荐 | <https://app.mokahr.com/apply/dewu?keyword=%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-Java%20%E6%96%B9%E5%90%91> |
 
 #### 4.2.2 风控 / 数据
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 风控算法工程师 | 风控 | <https://app.mokahr.com/apply/dewu> |
-| 数据挖掘算法工程师 | 数据 | <https://app.mokahr.com/apply/dewu> |
+| 风控算法工程师 | 风控 | <https://app.mokahr.com/apply/dewu?keyword=%E9%A3%8E%E6%8E%A7%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 数据挖掘算法工程师 | 数据 | <https://app.mokahr.com/apply/dewu?keyword=%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 ### 4.3 公司背景
 - 工作地：上海
@@ -188,7 +188,7 @@
 ## 7. 喜马拉雅 (Ximalaya)
 
 ### 7.1 招聘入口
-- **校招官网**：<https://job.ximalaya.com/>
+- **校招官网**：<https://www.ximalaya.com/hr/>
 - **校招公众号**：喜马拉雅招聘
 
 ### 7.2 各方向具体岗位
@@ -196,16 +196,16 @@
 #### 7.2.1 推荐 / 搜索
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 推荐算法工程师 | 推荐 | <https://job.ximalaya.com/> |
-| 搜索算法工程师 | 搜索 | <https://job.ximalaya.com/> |
+| 推荐算法工程师 | 推荐 | <https://www.ximalaya.com/hr/> |
+| 搜索算法工程师 | 搜索 | <https://www.ximalaya.com/hr/> |
 
 #### 7.2.2 NLP / 语音 / CV
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| NLP 算法工程师 | NLP | <https://job.ximalaya.com/> |
-| 语音算法工程师-ASR | ASR | <https://job.ximalaya.com/> |
-| 语音算法工程师-TTS | TTS | <https://job.ximalaya.com/> |
-| 计算机视觉算法工程师 | CV | <https://job.ximalaya.com/> |
+| NLP 算法工程师 | NLP | <https://www.ximalaya.com/hr/> |
+| 语音算法工程师-ASR | ASR | <https://www.ximalaya.com/hr/> |
+| 语音算法工程师-TTS | TTS | <https://www.ximalaya.com/hr/> |
+| 计算机视觉算法工程师 | CV | <https://www.ximalaya.com/hr/> |
 
 ### 7.3 公司背景
 - 工作地：上海
@@ -216,7 +216,7 @@
 ## 8. 阅文集团 (China Literature)
 
 ### 8.1 招聘入口
-- **校招官网**：<https://recruit.yuewen.com/>
+- **校招官网**：<https://www.yuewen.com/>
 - **校招公众号**：阅文招聘
 
 ### 8.2 各方向具体岗位
@@ -224,14 +224,14 @@
 #### 8.2.1 NLP / 内容理解
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| NLP 算法工程师 | NLP | <https://recruit.yuewen.com/> |
-| 内容理解算法工程师 | CV/NLP | <https://recruit.yuewen.com/> |
+| NLP 算法工程师 | NLP | <https://www.yuewen.com/> |
+| 内容理解算法工程师 | CV/NLP | <https://www.yuewen.com/> |
 
 #### 8.2.2 推荐 / AIGC
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 推荐算法工程师 | 推荐 | <https://recruit.yuewen.com/> |
-| AIGC 算法工程师 | 生成式 | <https://recruit.yuewen.com/> |
+| 推荐算法工程师 | 推荐 | <https://www.yuewen.com/> |
+| AIGC 算法工程师 | 生成式 | <https://www.yuewen.com/> |
 
 ### 8.3 公司背景
 - 工作地：上海
@@ -243,17 +243,17 @@
 
 | 业务 | 招聘入口 | 算法方向 |
 |---|---|---|
-| **饿了么** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman> | 推荐/物流 |
-| **菜鸟** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman> | 物流调度/路径 |
-| **高德** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman> | CV/CG/地图 |
-| **灵犀互娱** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman> | 游戏 AI |
-| **飞猪** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman> | 推荐/搜索 |
-| **盒马** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman> | 供应链/视觉 |
-| **钉钉** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman> | AI 助理 |
-| **阿里国际** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman> | 推荐/搜索/广告 |
-| **淘天** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman> | 推荐/搜索/广告 |
-| **优酷** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman> | 视频/CV/推荐 |
-| **阿里大文娱** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman> | 推荐/CV |
+| **饿了么** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E9%A5%BF%E4%BA%86%E4%B9%88%2A%2A> | 推荐/物流 |
+| **菜鸟** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E8%8F%9C%E9%B8%9F%2A%2A> | 物流调度/路径 |
+| **高德** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E9%AB%98%E5%BE%B7%2A%2A> | CV/CG/地图 |
+| **灵犀互娱** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E7%81%B5%E7%8A%80%E4%BA%92%E5%A8%B1%2A%2A> | 游戏 AI |
+| **飞猪** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E9%A3%9E%E7%8C%AA%2A%2A> | 推荐/搜索 |
+| **盒马** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E7%9B%92%E9%A9%AC%2A%2A> | 供应链/视觉 |
+| **钉钉** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E9%92%89%E9%92%89%2A%2A> | AI 助理 |
+| **阿里国际** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E9%98%BF%E9%87%8C%E5%9B%BD%E9%99%85%2A%2A> | 推荐/搜索/广告 |
+| **淘天** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E6%B7%98%E5%A4%A9%2A%2A> | 推荐/搜索/广告 |
+| **优酷** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E4%BC%98%E9%85%B7%2A%2A> | 视频/CV/推荐 |
+| **阿里大文娱** | <https://talent-holding.alibaba.com/campus/position-list?campusType=freshman&keywords=%2A%2A%E9%98%BF%E9%87%8C%E5%A4%A7%E6%96%87%E5%A8%B1%2A%2A> | 推荐/CV |
 
 ---
 

@@ -17,18 +17,18 @@
 #### 1.2.1 大模型 / AI
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 大语言模型算法工程师 | LLM | <https://hr.xiaomi.com/campus> |
-| AI 算法工程师-决策智能方向 | 强化学习/运筹 | <https://hr.xiaomi.com/campus> |
-| AI 算法工程师-销服方向 | 销售/服务 | <https://hr.xiaomi.com/campus> |
-| 大模型算法研究员 | LLM 研究 | <https://hr.xiaomi.com/campus> |
-| AI 大模型算法工程师-手机 | LLM/移动端 | <https://hr.xiaomi.com/campus> |
-| 高级图像处理算法工程师 | 图像处理 | <https://hr.xiaomi.com/campus> |
-| AI 算法工程师（视觉/视频） | CV | <https://hr.xiaomi.com/campus> |
-| 视觉图像算法工程师-camera | CV/ISP | <https://hr.xiaomi.com/campus> |
-| AI 深度强化学习算法工程师 | RL | <https://hr.xiaomi.com/campus> |
-| 广告算法工程师 | 广告 | <https://hr.xiaomi.com/campus> |
-| AIGC 算法工程师 | AIGC | <https://hr.xiaomi.com/campus> |
-| 搜索与推荐算法工程师 | 搜索/推荐 | <https://hr.xiaomi.com/campus> |
+| 大语言模型算法工程师 | LLM | <https://hr.xiaomi.com/campus/list?keyword=%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| AI 算法工程师-决策智能方向 | 强化学习/运筹 | <https://hr.xiaomi.com/campus/list?keyword=AI%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E5%86%B3%E7%AD%96%E6%99%BA%E8%83%BD%E6%96%B9%E5%90%91> |
+| AI 算法工程师-销服方向 | 销售/服务 | <https://hr.xiaomi.com/campus/list?keyword=AI%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E9%94%80%E6%9C%8D%E6%96%B9%E5%90%91> |
+| 大模型算法研究员 | LLM 研究 | <https://hr.xiaomi.com/campus/list?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6%E5%91%98> |
+| AI 大模型算法工程师-手机 | LLM/移动端 | <https://hr.xiaomi.com/campus/list?keyword=AI%20%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E6%89%8B%E6%9C%BA> |
+| 高级图像处理算法工程师 | 图像处理 | <https://hr.xiaomi.com/campus/list?keyword=%E9%AB%98%E7%BA%A7%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| AI 算法工程师（视觉/视频） | CV | <https://hr.xiaomi.com/campus/list?keyword=AI%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88%E8%A7%86%E8%A7%89/%E8%A7%86%E9%A2%91%EF%BC%89> |
+| 视觉图像算法工程师-camera | CV/ISP | <https://hr.xiaomi.com/campus/list?keyword=%E8%A7%86%E8%A7%89%E5%9B%BE%E5%83%8F%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-camera> |
+| AI 深度强化学习算法工程师 | RL | <https://hr.xiaomi.com/campus/list?keyword=AI%20%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 广告算法工程师 | 广告 | <https://hr.xiaomi.com/campus/list?keyword=%E5%B9%BF%E5%91%8A%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| AIGC 算法工程师 | AIGC | <https://hr.xiaomi.com/campus/list?keyword=AIGC%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 搜索与推荐算法工程师 | 搜索/推荐 | <https://hr.xiaomi.com/campus/list?keyword=%E6%90%9C%E7%B4%A2%E4%B8%8E%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 ### 1.3 公司背景
 - 2026 届春季：中国内地 2026-01 ~ 2026-12 毕业
@@ -195,7 +195,7 @@
 ## 6. 小鹏汽车 (XPENG)
 
 ### 6.1 招聘入口
-- **招聘官网**：<https://www.xiaopeng.com/recruit.html>
+- **招聘官网**：<https://www.xiaopeng.com/join.html>
 - **校招公众号**：小鹏汽车招聘
 - **亮点**：AI 算法工程师年薪可达百万
 
@@ -204,26 +204,26 @@
 #### 6.2.1 自动驾驶
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 自动驾驶感知算法工程师 | 感知/融合 | <https://www.xiaopeng.com/recruit.html> |
-| 自动驾驶规划算法工程师 | 规划/决策 | <https://www.xiaopeng.com/recruit.html> |
-| 自动驾驶定位算法工程师（SLAM） | 定位/SLAM | <https://www.xiaopeng.com/recruit.html> |
-| 端到端自动驾驶算法工程师 | E2E/XNGP | <https://www.xiaopeng.com/recruit.html> |
-| 自动驾驶预测算法工程师 | 预测 | <https://www.xiaopeng.com/recruit.html> |
+| 自动驾驶感知算法工程师 | 感知/融合 | <https://www.xiaopeng.com/join.html> |
+| 自动驾驶规划算法工程师 | 规划/决策 | <https://www.xiaopeng.com/join.html> |
+| 自动驾驶定位算法工程师（SLAM） | 定位/SLAM | <https://www.xiaopeng.com/join.html> |
+| 端到端自动驾驶算法工程师 | E2E/XNGP | <https://www.xiaopeng.com/join.html> |
+| 自动驾驶预测算法工程师 | 预测 | <https://www.xiaopeng.com/join.html> |
 
 #### 6.2.2 智能座舱
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 智能座舱算法工程师 | 多模态/语音 | <https://www.xiaopeng.com/recruit.html> |
-| 大模型算法工程师-座舱 | LLM | <https://www.xiaopeng.com/recruit.html> |
+| 智能座舱算法工程师 | 多模态/语音 | <https://www.xiaopeng.com/join.html> |
+| 大模型算法工程师-座舱 | LLM | <https://www.xiaopeng.com/join.html> |
 
 #### 6.2.3 大模型 / 多模态 / 视觉
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 大模型算法工程师（百万年薪） | LLM 基座 | <https://www.xiaopeng.com/recruit.html> |
-| 多模态算法工程师 | 多模态 | <https://www.xiaopeng.com/recruit.html> |
-| 视觉算法工程师 | CV | <https://www.xiaopeng.com/recruit.html> |
-| SLAM 算法工程师 | VIO/SLAM | <https://www.xiaopeng.com/recruit.html> |
-| 强化学习算法工程师 | RL/决策 | <https://www.xiaopeng.com/recruit.html> |
+| 大模型算法工程师（百万年薪） | LLM 基座 | <https://www.xiaopeng.com/join.html> |
+| 多模态算法工程师 | 多模态 | <https://www.xiaopeng.com/join.html> |
+| 视觉算法工程师 | CV | <https://www.xiaopeng.com/join.html> |
+| SLAM 算法工程师 | VIO/SLAM | <https://www.xiaopeng.com/join.html> |
+| 强化学习算法工程师 | RL/决策 | <https://www.xiaopeng.com/join.html> |
 
 ### 6.3 公司背景
 - 工作地：广州/北京/上海
@@ -242,24 +242,24 @@
 #### 7.2.1 自动驾驶
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 自动驾驶感知算法工程师 | 感知/融合 | <https://www.lixiang.com/recruit> |
-| 自动驾驶规划算法工程师 | 规划/决策 | <https://www.lixiang.com/recruit> |
-| 自动驾驶定位算法工程师 | 定位/SLAM | <https://www.lixiang.com/recruit> |
-| 端到端自动驾驶算法工程师 | E2E/AD Max | <https://www.lixiang.com/recruit> |
-| 自动驾驶预测算法工程师 | 预测 | <https://www.lixiang.com/recruit> |
+| 自动驾驶感知算法工程师 | 感知/融合 | <https://www.lixiang.com/recruit/position?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E6%84%9F%E7%9F%A5%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 自动驾驶规划算法工程师 | 规划/决策 | <https://www.lixiang.com/recruit/position?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 自动驾驶定位算法工程师 | 定位/SLAM | <https://www.lixiang.com/recruit/position?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%9A%E4%BD%8D%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 端到端自动驾驶算法工程师 | E2E/AD Max | <https://www.lixiang.com/recruit/position?keyword=%E7%AB%AF%E5%88%B0%E7%AB%AF%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 自动驾驶预测算法工程师 | 预测 | <https://www.lixiang.com/recruit/position?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E9%A2%84%E6%B5%8B%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 #### 7.2.2 智能座舱
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 智能座舱算法工程师 | 多模态/语音 | <https://www.lixiang.com/recruit> |
-| 大模型算法工程师-理想同学 | LLM | <https://www.lixiang.com/recruit> |
+| 智能座舱算法工程师 | 多模态/语音 | <https://www.lixiang.com/recruit/position?keyword=%E6%99%BA%E8%83%BD%E5%BA%A7%E8%88%B1%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 大模型算法工程师-理想同学 | LLM | <https://www.lixiang.com/recruit/position?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88-%E7%90%86%E6%83%B3%E5%90%8C%E5%AD%A6> |
 
 #### 7.2.3 推荐 / 视觉
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 推荐算法工程师 | 推荐 | <https://www.lixiang.com/recruit> |
-| 视觉算法工程师 | CV | <https://www.lixiang.com/recruit> |
-| 多模态算法工程师 | 多模态 | <https://www.lixiang.com/recruit> |
+| 推荐算法工程师 | 推荐 | <https://www.lixiang.com/recruit/position?keyword=%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 视觉算法工程师 | CV | <https://www.lixiang.com/recruit/position?keyword=%E8%A7%86%E8%A7%89%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 多模态算法工程师 | 多模态 | <https://www.lixiang.com/recruit/position?keyword=%E5%A4%9A%E6%A8%A1%E6%80%81%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 ### 7.3 公司背景
 - 工作地：北京/上海/常州
@@ -279,30 +279,30 @@
 #### 8.2.1 自动驾驶（ADS）
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 自动驾驶感知算法工程师 | ADS 感知 | <https://career.huawei.com> |
-| 自动驾驶规划算法工程师 | ADS 规划 | <https://career.huawei.com> |
-| 自动驾驶融合算法工程师 | ADS 融合 | <https://career.huawei.com> |
-| 自动驾驶预测算法工程师 | ADS 预测 | <https://career.huawei.com> |
-| 端到端 ADS 算法工程师 | ADS E2E | <https://career.huawei.com> |
+| 自动驾驶感知算法工程师 | ADS 感知 | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E6%84%9F%E7%9F%A5%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 自动驾驶规划算法工程师 | ADS 规划 | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 自动驾驶融合算法工程师 | ADS 融合 | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E8%9E%8D%E5%90%88%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 自动驾驶预测算法工程师 | ADS 预测 | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E9%A2%84%E6%B5%8B%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 端到端 ADS 算法工程师 | ADS E2E | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=%E7%AB%AF%E5%88%B0%E7%AB%AF%20ADS%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 #### 8.2.2 智能座舱
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 智能座舱算法工程师 | 鸿蒙座舱 | <https://career.huawei.com> |
-| 智能座舱语音算法工程师 | ASR/TTS | <https://career.huawei.com> |
-| 智能座舱视觉算法工程师 | CV/手势 | <https://career.huawei.com> |
+| 智能座舱算法工程师 | 鸿蒙座舱 | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=%E6%99%BA%E8%83%BD%E5%BA%A7%E8%88%B1%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 智能座舱语音算法工程师 | ASR/TTS | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=%E6%99%BA%E8%83%BD%E5%BA%A7%E8%88%B1%E8%AF%AD%E9%9F%B3%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 智能座舱视觉算法工程师 | CV/手势 | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=%E6%99%BA%E8%83%BD%E5%BA%A7%E8%88%B1%E8%A7%86%E8%A7%89%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 #### 8.2.3 传感器 / 雷达
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| 毫米波雷达算法工程师 | 信号处理 | <https://career.huawei.com> |
-| 激光雷达算法工程师 | 点云处理 | <https://career.huawei.com> |
+| 毫米波雷达算法工程师 | 信号处理 | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=%E6%AF%AB%E7%B1%B3%E6%B3%A2%E9%9B%B7%E8%BE%BE%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 激光雷达算法工程师 | 点云处理 | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 #### 8.2.4 V2X / 大模型
 | 具体方向 | 业务/团队 | 链接 |
 |---|---|---|
-| V2X 算法工程师 | 车联网 | <https://career.huawei.com> |
-| 大模型算法工程师 | LLM | <https://career.huawei.com> |
+| V2X 算法工程师 | 车联网 | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=V2X%20%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
+| 大模型算法工程师 | LLM | <https://career.huawei.com/reccampportal/portal5/index.html?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88> |
 
 ### 8.3 公司背景
 - 工作地：上海/深圳/东莞/苏州

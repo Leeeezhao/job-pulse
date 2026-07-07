@@ -28,7 +28,7 @@
 | 算法研究员-GLM-5 | 基座模型新一代 | <https://zhipu-ai.jobs.feishu.cn/> |
 | 算法研究员-大模型对齐（RLHF） | GLM 对齐 | <https://zhipu-ai.jobs.feishu.cn/> |
 | AI 加速器架构研发工程师（大模型-高性能） | AI 芯片 / AI Infra | <https://www.zhipin.com/job_detail/cd6bc89aa92b1c1e03R42t-4FFBR.html>（[2026-05-27]） |
-| AI 加速器架构研发工程师-算力合伙人 | GLM-5 算力网络 | <https://new.qq.com/rain/a/20260216A041IB00>（[2026-02-16]） |
+| AI 加速器架构研发工程师-算力合伙人 | GLM-5 算力网络 | <https://join.qq.com/post.html?query=p_1&keyword=AI%20%E5%8A%A0%E9%80%9F%E5%99%A8%E6%9E%B6%E6%9E%84%E7%A0%94%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88-%E7%AE%97%E5%8A%9B%E5%90%88%E4%BC%99%E4%BA%BA>（[2026-02-16]） |
 
 #### 1.2.2 NLP / Agent / 多模态
 | 具体方向 | 业务/团队 | 链接 |
