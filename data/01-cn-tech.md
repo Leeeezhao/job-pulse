@@ -11,8 +11,8 @@
 
 | 公司 | 真实 URL 模板 | 实测状态 |
 |---|---|---|
-| **字节跳动** | `?keywords={方向}` | ✅ 实测确认 |
-| **美团** | `?keyword={方向}` | ✅ 实测确认 |
+| **字节跳动** | `?keywords={方向}&project=7525009396952582407,7621018151002507573` | ✅ 实测确认 (过滤实习) |
+| **美团** | `/web/campus` (主页, 避免实习混入) | ✅ 实测确认 (校招子站, 0实习) |
 | **腾讯** | `?keyword={方向}` | ✅ 实测确认 |
 | **知乎（Moka）** | `#/jobs?keyword={方向}` | ✅ 实测确认 |
 | **vivo** | `/home` (URL 不变, 前端 JS 搜索) | ✅ 实测确认 |
@@ -36,47 +36,47 @@
 
 ## 1. 字节跳动 (ByteDance) — ✅ URL搜索有效 (Playwright 实测)
 
-**实测结果**：`?keywords=推荐` / `?keywords=NLP` / `?keywords=LLM` 等都返回**该方向的岗位列表**
+**v9 实测结果**：`?keywords={方向}` 默认会混入 30-40% 实习岗。加 `&project=7525009396952582407,7621018151002507573` 后**0 实习** (正式校招项目 ID)
 
 - **校招官网**：<https://jobs.bytedance.com/campus/position>
-- **Top Seed 大模型顶尖人才**：<https://jobs.bytedance.com/campus/position?keywords=Top%20Seed>
+- **Top Seed 大模型顶尖人才**：<https://jobs.bytedance.com/campus/position?keywords=Top%20Seed&project=7525009396952582407,7621018151002507573>
 - **2026 秋招规模**：5000+ Offer
 - **公众号**：字节跳动招聘
 
 | 方向 | 学历 | 工作地 | JD 关键词 | 链接（实测） | 类型 |
 |---|---|---|---|---|---|
-| 推荐 | 硕/博 | 北京/杭州/深圳 | 大模型推荐、CTR/CVR、深度学习 | <https://jobs.bytedance.com/campus/position?keywords=%E6%8E%A8%E8%8D%90> | 🔍 |
-| 搜索 | 硕/博 | 北京/上海 | RAG、向量检索、个性化排序 | <https://jobs.bytedance.com/campus/position?keywords=%E6%90%9C%E7%B4%A2> | 🔍 |
-| NLP | 硕/博 | 北京/上海/杭州 | LLM、对话、预训练 | <https://jobs.bytedance.com/campus/position?keywords=NLP> | 🔍 |
-| 计算机视觉 | 硕/博 | 北京/上海 | 检测、分割、AIGC | <https://jobs.bytedance.com/campus/position?keywords=%E8%A7%86%E8%A7%89> | 🔍 |
-| 多模态 | 硕/博 | 北京/上海 | 视频理解、跨模态、AIGC | <https://jobs.bytedance.com/campus/position?keywords=%E5%A4%9A%E6%A8%A1%E6%80%81> | 🔍 |
-| LLM | 硕/博 | 北京/上海/杭州 | 预训练、SFT、RLHF、推理加速 | <https://jobs.bytedance.com/campus/position?keywords=LLM> | 🔍 |
-| 广告 | 硕/博 | 北京/上海 | CTR/CVR、创意生成、Auction | <https://jobs.bytedance.com/campus/position?keywords=%E5%B9%BF%E5%91%8A> | 🔍 |
-| 语音 | 硕/博 | 北京/上海 | ASR/TTS、语音合成、豆包 | <https://jobs.bytedance.com/campus/position?keywords=%E8%AF%AD%E9%9F%B3> | 🔍 |
-| 风控 | 硕 | 北京/上海 | 异常检测、因果、UG | <https://jobs.bytedance.com/campus/position?keywords=%E9%A3%8E%E6%8E%A7> | 🔍 |
-| 运筹优化 | 硕/博 | 北京/上海 | 调度、路径规划、电商物流 | <https://jobs.bytedance.com/campus/position?keywords=%E8%BF%90%E7%AD%B9> | 🔍 |
-| AI Infra | 硕/博 | 北京/杭州 | 训练框架、推理引擎、MLSys | <https://jobs.bytedance.com/campus/position?keywords=AI%20Infra> | 🔍 |
-| 机器人 | 硕/博 | 上海 | PICO、SLAM、3D 视觉 | <https://jobs.bytedance.com/campus/position?keywords=%E6%9C%BA%E5%99%A8%E4%BA%BA> | 🔍 |
+| 推荐 | 硕/博 | 北京/杭州/深圳 | 大模型推荐、CTR/CVR、深度学习 | <https://jobs.bytedance.com/campus/position?keywords=%E6%8E%A8%E8%8D%90&project=7525009396952582407,7621018151002507573> | 🔍 |
+| 搜索 | 硕/博 | 北京/上海 | RAG、向量检索、个性化排序 | <https://jobs.bytedance.com/campus/position?keywords=%E6%90%9C%E7%B4%A2&project=7525009396952582407,7621018151002507573> | 🔍 |
+| NLP | 硕/博 | 北京/上海/杭州 | LLM、对话、预训练 | <https://jobs.bytedance.com/campus/position?keywords=NLP&project=7525009396952582407,7621018151002507573> | 🔍 |
+| 计算机视觉 | 硕/博 | 北京/上海 | 检测、分割、AIGC | <https://jobs.bytedance.com/campus/position?keywords=%E8%A7%86%E8%A7%89&project=7525009396952582407,7621018151002507573> | 🔍 |
+| 多模态 | 硕/博 | 北京/上海 | 视频理解、跨模态、AIGC | <https://jobs.bytedance.com/campus/position?keywords=%E5%A4%9A%E6%A8%A1%E6%80%81&project=7525009396952582407,7621018151002507573> | 🔍 |
+| LLM | 硕/博 | 北京/上海/杭州 | 预训练、SFT、RLHF、推理加速 | <https://jobs.bytedance.com/campus/position?keywords=LLM&project=7525009396952582407,7621018151002507573> | 🔍 |
+| 广告 | 硕/博 | 北京/上海 | CTR/CVR、创意生成、Auction | <https://jobs.bytedance.com/campus/position?keywords=%E5%B9%BF%E5%91%8A&project=7525009396952582407,7621018151002507573> | 🔍 |
+| 语音 | 硕/博 | 北京/上海 | ASR/TTS、语音合成、豆包 | <https://jobs.bytedance.com/campus/position?keywords=%E8%AF%AD%E9%9F%B3&project=7525009396952582407,7621018151002507573> | 🔍 |
+| 风控 | 硕 | 北京/上海 | 异常检测、因果、UG | <https://jobs.bytedance.com/campus/position?keywords=%E9%A3%8E%E6%8E%A7&project=7525009396952582407,7621018151002507573> | 🔍 |
+| 运筹优化 | 硕/博 | 北京/上海 | 调度、路径规划、电商物流 | <https://jobs.bytedance.com/campus/position?keywords=%E8%BF%90%E7%AD%B9&project=7525009396952582407,7621018151002507573> | 🔍 |
+| AI Infra | 硕/博 | 北京/杭州 | 训练框架、推理引擎、MLSys | <https://jobs.bytedance.com/campus/position?keywords=AI%20Infra&project=7525009396952582407,7621018151002507573> | 🔍 |
+| 机器人 | 硕/博 | 上海 | PICO、SLAM、3D 视觉 | <https://jobs.bytedance.com/campus/position?keywords=%E6%9C%BA%E5%99%A8%E4%BA%BA&project=7525009396952582407,7621018151002507573> | 🔍 |
 
 ---
 
 ## 2. 美团 — ✅ URL搜索有效
 
-**实测结果**：`?keyword=推荐` / `?keyword=NLP` 等都返回过滤后的岗位列表
+**v10 实测结果**：美团 URL 搜索无法过滤掉实习岗 (任何 `?keyword=X` 都会混 12.5% 实习)。**统一给主页 `/web/campus`**，用户进站内搜
 
 - **校招官网**：<https://zhaopin.meituan.com/web/position>
 - **公众号**：美团招聘
 
 | 方向 | 学历 | 工作地 | JD 关键词 | 链接（实测） | 类型 |
 |---|---|---|---|---|---|
-| 推荐 | 硕/博 | 北京/上海 | 外卖推荐、酒店旅行推荐 | <https://zhaopin.meituan.com/web/position?keyword=%E6%8E%A8%E8%8D%90> | 🔍 |
-| 搜索 | 硕/博 | 北京/上海 | 美团搜索、广告搜索 | <https://zhaopin.meituan.com/web/position?keyword=%E6%90%9C%E7%B4%A2> | 🔍 |
-| 广告 | 硕/博 | 北京/上海 | 美团广告、CTR | <https://zhaopin.meituan.com/web/position?keyword=%E5%B9%BF%E5%91%8A> | 🔍 |
-| NLP | 硕/博 | 北京/上海 | 评论理解、智能客服 | <https://zhaopin.meituan.com/web/position?keyword=NLP> | 🔍 |
-| 计算机视觉 | 硕/博 | 北京 | 配送视觉、菜品识别 | <https://zhaopin.meituan.com/web/position?keyword=%E8%A7%86%E8%A7%89> | 🔍 |
-| 大模型 | 硕/博 | 北京/上海 | LongCat、Agent | <https://zhaopin.meituan.com/web/position?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B> | 🔍 |
-| 运筹优化 | 硕/博 | 北京/上海 | 骑手调度、配送 ETA | <https://zhaopin.meituan.com/web/position?keyword=%E8%BF%90%E7%AD%B9> | 🔍 |
-| 风控 | 硕 | 北京 | 反欺诈、反爬虫 | <https://zhaopin.meituan.com/web/position?keyword=%E9%A3%8E%E6%8E%A7> | 🔍 |
+| 推荐 | 硕/博 | 北京/上海 | 外卖推荐、酒店旅行推荐 | <https://zhaopin.meituan.com/web/campus> | 🔍 |
+| 搜索 | 硕/博 | 北京/上海 | 美团搜索、广告搜索 | <https://zhaopin.meituan.com/web/campus> | 🔍 |
+| 广告 | 硕/博 | 北京/上海 | 美团广告、CTR | <https://zhaopin.meituan.com/web/campus> | 🔍 |
+| NLP | 硕/博 | 北京/上海 | 评论理解、智能客服 | <https://zhaopin.meituan.com/web/campus> | 🔍 |
+| 计算机视觉 | 硕/博 | 北京 | 配送视觉、菜品识别 | <https://zhaopin.meituan.com/web/campus> | 🔍 |
+| 大模型 | 硕/博 | 北京/上海 | LongCat、Agent | <https://zhaopin.meituan.com/web/campus> | 🔍 |
+| 运筹优化 | 硕/博 | 北京/上海 | 骑手调度、配送 ETA | <https://zhaopin.meituan.com/web/campus> | 🔍 |
+| 风控 | 硕 | 北京 | 反欺诈、反爬虫 | <https://zhaopin.meituan.com/web/campus> | 🔍 |
 
 ---
 
