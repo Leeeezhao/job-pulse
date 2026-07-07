@@ -35,6 +35,10 @@
 - **对象**：2026 届补录 + 2027 届实习
 - **快 Star-X 实习项目**：顶尖校园技术人才
 
+### 1.5 阿里 2026 春招实习
+- **官方入口**：<https://talent-holding.alibaba.com/campus/position-list?campusType=freshman>
+- **规模**：3000+ 实习岗位，AI 占近 5 成
+
 ---
 
 ## 2. 2027 届暑期实习
@@ -52,6 +56,10 @@
 | **快手** | <https://campus.kuaishou.cn/> | 2026 春 | 2 个月+ | 快 Star-X 优先 |
 | **拼多多** | <https://careers.pinduoduo.com/campus/intern> | 2026 春 | 2 个月+ | 算法岗紧缺 |
 | **小红书** | <https://campus.xiaohongshu.com/> | 2026 春 | 2 个月+ | 推荐算法热门 |
+| **大疆** | <https://we.dji.com/zh-CN/campus> | 2026 春 | 2 个月+ | 2027 拓疆者 |
+| **蔚来** | <https://campus.nio.com/> | 2026 春 | 2 个月+ | 自动驾驶 |
+| **小鹏** | <https://www.xiaopeng.com/recruit.html> | 2026 春 | 2 个月+ | AI 岗百万 |
+| **理想** | <https://www.lixiang.com/recruit> | 2026 春 | 2 个月+ | - |
 
 ### 2.2 暑期实习时间线（以字节为例）
 - **3-4 月**：投递（推荐算法 4 月开启）
@@ -83,6 +91,13 @@
 - **实习僧**：<https://www.shixiseng.com/>
 - **脉脉**：<https://maimai.cn/>
 - **LinkedIn**：<https://www.linkedin.com/>
+
+### 3.3 AI 独角兽实习渠道
+- **智谱 AI 实习**：<https://zhipu-ai.jobs.feishu.cn/>（飞书招聘系统）
+- **月之暗面 实习**：<https://app.mokahr.com/apply/moonshot/148506>
+- **DeepSeek 实习**：官网底部"加入我们"
+- **阶跃星辰 实习**：BOSS 直聘搜索
+- **MiniMax 实习**：BOSS 直聘搜索
 
 ---
 
@@ -178,11 +193,13 @@
 | 拼多多 | `ez6elFu2NB` / `YKWS6suVaT` / `RqFT3tpyvU` / `sf4PiVV7SQ` / `9NGaGheQe9` | 区分岗位 |
 | 腾讯云智 | `NTAA0DU` | CSIG 子公司 |
 | 华为 | 通过内推人获取简历编号 | 选择意向部门 |
+| 智谱 AI | `ZQVBNUW` | 校招/社招通用 |
+| 百川智能 | `1WR3CGJ` | 2025 届示例 |
 
 ### 7.3 内推注意事项
 - **优先内推**：内推简历通常优先筛选
-- **慎用码**：每个内推码可能被多人使用，注意选择
-- **真实有效**：避免使用假内推码或泄露个人信息
+- **慎用码**：每个内推码可能被多人使用
+- **真实有效**：避免使用假内推码
 - **联系员工**：最好直接联系在职员工 1:1 内推
 
 ---
