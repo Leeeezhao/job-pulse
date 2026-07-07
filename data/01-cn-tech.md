@@ -12,7 +12,7 @@
 | 公司 | 真实 URL 模板 | 实测状态 |
 |---|---|---|
 | **字节跳动** | `?keywords={方向}&project=7525009396952582407,7621018151002507573` | ✅ 实测确认 (过滤实习) |
-| **美团** | `/web/campus` (主页, 避免实习混入) | ✅ 实测确认 (校招子站, 0实习) |
+| **美团** | `/web/position?hiringType=4_1&keyword={方向}` | ✅ 实测确认 (应届校招项目, 0实习) |
 | **腾讯** | `?keyword={方向}` | ✅ 实测确认 |
 | **知乎（Moka）** | `#/jobs?keyword={方向}` | ✅ 实测确认 |
 | **vivo** | `/home` (URL 不变, 前端 JS 搜索) | ✅ 实测确认 |
@@ -62,21 +62,21 @@
 
 ## 2. 美团 — ✅ URL搜索有效
 
-**v10 实测结果**：美团 URL 搜索无法过滤掉实习岗 (任何 `?keyword=X` 都会混 12.5% 实习)。**统一给主页 `/web/campus`**，用户进站内搜
+**v11 实测结果**：美团真实可用 URL 模板是 `/web/position?hiringType=4_1&keyword={方向}`。`hiringType=4_1` = "应届生校招" 项目, **0 实习过滤**。注: NLP 方向必须搜"自然语言", 搜"NLP"返 0。
 
-- **校招官网**：<https://zhaopin.meituan.com/web/position>
+- **校招官网**：<https://zhaopin.meituan.com/web/position?hiringType=4_1>
 - **公众号**：美团招聘
 
 | 方向 | 学历 | 工作地 | JD 关键词 | 链接（实测） | 类型 |
 |---|---|---|---|---|---|
-| 推荐 | 硕/博 | 北京/上海 | 外卖推荐、酒店旅行推荐 | <https://zhaopin.meituan.com/web/campus> | 🔍 |
-| 搜索 | 硕/博 | 北京/上海 | 美团搜索、广告搜索 | <https://zhaopin.meituan.com/web/campus> | 🔍 |
-| 广告 | 硕/博 | 北京/上海 | 美团广告、CTR | <https://zhaopin.meituan.com/web/campus> | 🔍 |
-| NLP | 硕/博 | 北京/上海 | 评论理解、智能客服 | <https://zhaopin.meituan.com/web/campus> | 🔍 |
-| 计算机视觉 | 硕/博 | 北京 | 配送视觉、菜品识别 | <https://zhaopin.meituan.com/web/campus> | 🔍 |
-| 大模型 | 硕/博 | 北京/上海 | LongCat、Agent | <https://zhaopin.meituan.com/web/campus> | 🔍 |
-| 运筹优化 | 硕/博 | 北京/上海 | 骑手调度、配送 ETA | <https://zhaopin.meituan.com/web/campus> | 🔍 |
-| 风控 | 硕 | 北京 | 反欺诈、反爬虫 | <https://zhaopin.meituan.com/web/campus> | 🔍 |
+| 推荐 | 硕/博 | 北京/上海 | 外卖推荐、酒店旅行推荐 | <https://zhaopin.meituan.com/web/position?hiringType=4_1&keyword=%E6%8E%A8%E8%8D%90> | 🔍 |
+| 搜索 | 硕/博 | 北京/上海 | 美团搜索、广告搜索 | <https://zhaopin.meituan.com/web/position?hiringType=4_1&keyword=%E6%90%9C%E7%B4%A2> | 🔍 |
+| 广告 | 硕/博 | 北京/上海 | 美团广告、CTR | <https://zhaopin.meituan.com/web/position?hiringType=4_1&keyword=%E5%B9%BF%E5%91%8A> | 🔍 |
+| NLP | 硕/博 | 北京/上海 | 评论理解、智能客服 | <https://zhaopin.meituan.com/web/position?hiringType=4_1&keyword=%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80> | 🔍 |
+| 计算机视觉 | 硕/博 | 北京 | 配送视觉、菜品识别 | <https://zhaopin.meituan.com/web/position?hiringType=4_1&keyword=%E8%A7%86%E8%A7%89> | 🔍 |
+| 大模型 | 硕/博 | 北京/上海 | LongCat、Agent | <https://zhaopin.meituan.com/web/position?hiringType=4_1&keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B> | 🔍 |
+| 运筹优化 | 硕/博 | 北京/上海 | 骑手调度、配送 ETA | <https://zhaopin.meituan.com/web/position?hiringType=4_1&keyword=%E8%BF%90%E7%AD%B9> | 🔍 |
+| 风控 | 硕 | 北京 | 反欺诈、反爬虫 | <https://zhaopin.meituan.com/web/position?hiringType=4_1&keyword=%E9%A3%8E%E6%8E%A7> | 🔍 |
 
 ---
 
@@ -259,7 +259,7 @@
 | 公司 | 实测类型 | 备注 |
 |---|---|---|
 | 字节跳动 | ✅ URL 搜索有效 | `?keywords=X` 真实过滤 |
-| 美团 | ✅ URL 搜索有效 | `?keyword=X` 真实过滤 |
+| 美团 | ✅ URL 搜索有效 | `?hiringType=4_1&keyword=X` 应届校招项目 0实习 |
 | 腾讯 | ✅ URL 搜索有效 | `?keyword=X` 真实过滤 |
 | 知乎 (Moka) | ✅ URL 搜索有效 | `#/jobs?keyword=X` |
 | vivo | ✅ URL 搜索有效 | URL 不变, 前端 JS 搜索 (搜"推荐"返回 33 个, 搜"NLP"返回 16 个) |
