@@ -1,13 +1,13 @@
 # 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v3）
 
-> **v3 重写**：基于 Playwright 实测，去掉所有"猜测的"URL 搜索参数
+> **v14：添加 12 家中型企业（快手携程360虎牙鹰角Keep飞书元戎启行等）+ 美团系共享 URL**
 > **实测日期**：2026-07-07
-> **实测公司**：25+ 家（v3-v12 累计）
-> **实测结果**（v12）：✅ 8 家 URL 搜索真实有效（含飞书系蔚来/小鹏 + 理想 functionsids），其余 🏠 需进站内搜
+> **实测公司**：37+ 家（v3-v14 累计）
+> **实测结果**：✅ 12 家 URL 搜索真实有效（含快手、美团系、飞书系、理想 functionsids、Moka 系、字节 project ID），其余 🏠 需进站内搜
 
 ## ⚠️ 重要说明
 
-通过实际打开浏览器测试（v3-v13 累计 26+ 家公司），**以下 8 家公司 URL 搜索参数真实生效**：
+通过实际打开浏览器测试（v3-v14 累计 37+ 家公司），**以下 12 家公司 URL 搜索参数真实生效**：
 
 | 公司 | 真实 URL 模板 | 实测状态 |
 |---|---|---|
@@ -20,7 +20,8 @@
 | **小鹏（飞书系）** | `?keyword={方向}` | ✅ v12 实测 |
 | **理想汽车** | `?project_id=4&functionsids={分类ID}` | ✅ v12 实测 (函数 ID 代替关键词) |
 | **滴滴（Moka）** | `#/jobs?project=2027` (项目筛代替关键词) | ✅ v12 实测 |
-| **智谱 / 月之暗面 / MiniMax / 百川（Moka / 飞书系）** | `#/jobs?keyword={方向}` 或 `?keyword={方向}` | ✅ 实测确认 |
+| **快手校招** | `#/campus/jobs?recruitSubProjectCodes=20271779425607` | ✅ v14 实测, 0 实习 |
+| **智谱 / 月之暗面 / MiniMax / 百川（元戎启行等 Moka / 飞书系）** | `#/jobs?keyword={方向}` 或 `?keyword={方向}` | ✅ 实测确认 |
 
 **其他 10+ 家公司 URL 搜索参数被测试证明无效**（关键词被忽略，跳默认列表）。对这些公司，**正确的做法是直接给主页链接**，让用户进首页用站内搜索。
 
@@ -373,7 +374,134 @@
 
 ---
 
-## 📊 完整实测结论 (v3-v12, Playwright + Chromium)
+## 15. 快手校招 — ✅ URL 参数有效 (v14 校招系统)
+
+**v14 实测重大发现**：快手校招完全可用。点击主页三个 tab 后 URL 会变。
+
+- **招聘主页**：<https://campus.kuaishou.cn/recruit/campus/e/> (含 应届招聘 / 实习招聘 / 快Star 三个 tab)
+- **2027 届应届招聘 (推荐)**：<https://campus.kuaishou.cn/recruit/campus/e/#/campus/jobs?recruitSubProjectCodes=20271779425607>
+  - body 显示 **共 74 个职位** (含 【快Star】大语言模型算法工程师、广告 AI 算法工程师、音视频大模型算法工程师)
+  - 0 实习
+- **2026 届留用实习**：<https://campus.kuaishou.cn/recruit/campus/e/#/campus/jobs?recruitSubProjectCodes=20271772783534> (全实习, 不推荐)
+- **快Star 人才计划主页**：<https://campus.kuaishou.cn/recruit/campus/e/#/campus/talent>
+
+**关键词测试**: 应届招聘页面 `?keyword=X` 真实有效 (搜 "推荐"/"NLP"/"AI"/"搜索" 都返 18 个岗位, 0 实习)
+
+---
+
+## 16. 携程校招 — ✅ 完整校招系统 (v14)
+
+**v14 实测**：携程完整校招系统, 主页 body=5491
+
+- **招聘主页**：<https://campus.ctrip.com>
+- **项目**: 应届校招生 (面向 2026 届, 毕业 2025.9-2026.8) + 留用实习生 (面向 2027 届)
+- **岗位类别**: 研发类 / 产品类 / 设计类 / 综合类 / 人才项目
+
+| 方向 | 链接 | 类型 |
+|---|---|---|
+| 招聘主页 | <https://campus.ctrip.com> | 🏠 |
+| 社招 | <https://careers.ctrip.com> | 🏠 |
+
+---
+
+## 17. 360 集团 — ✅ 校招主页完整 (v14)
+
+**v14 实测**：`campus.360.cn` body=1078, 360 集团 2026 全球校园招聘
+
+- **招聘主页**：<https://campus.360.cn>
+
+**项目**: 2026 全球校园招聘 + **算法岗位快速通道** + 飞扬实习生 + 实习转正
+
+---
+
+## 18. 鹰角网络 — ✅ 招聘主页完整 (v14 游戏)
+
+**v14 实测**：`career.hypergryph.com` body=1787, 明日方舟母公司
+
+- **招聘主页**：<https://career.hypergryph.com>
+
+**职位类别**: 美术 / 产品 / **程序技术 76 个** / 职能 / 质量
+
+---
+
+## 19. Keep — ✅ 招聘主页完整 (v14)
+
+**v14 实测**：`hr.keep.com` body=232
+
+- **招聘主页**：<https://hr.keep.com>
+
+**项目**: 社会招聘 / 校园招聘 / 校招 Q&A / 实习生招聘 / KeepACE.AI
+
+---
+
+## 20. 美团系 (大众点评/猫眼/美团酒旅) — ✅ 同一系统 (v14)
+
+**v14 实测发现**：大众点评 / 猫眼 / 美团酒旅与美团本身同一校招系统。`career.dianping.com`、`hr.maoyan.com`、`career.meituan.com` 均跳到 `zhaopin.meituan.com/web/campus`。
+
+**真实可用 URL**: `<https://zhaopin.meituan.com/web/position?hiringType=4_1&keyword={方向}>` (与美团同 URL, 0 实习)
+
+---
+
+## 21. 飞书 (字节系) — ✅ 招聘主页完整 (v14)
+
+**v14 实测**：`www.feishu.cn/jobs` body=3933, 字节系
+
+- **招聘主页**：<https://www.feishu.cn/jobs>
+
+**状态**: 599 个职位, 职位类别 (产品/技术/职能/设计等) + 城市过滤 (北京/上海/深圳/杭州/成都/广州/西安)
+
+---
+
+## 22. 元戎启行 — ✅ Moka 系统 (v14 自动驾驶)
+
+**v14 实测**：`app.mokahr.com/apply/deeproute` body=2275, 自动驾驶
+
+- **招聘主页**：<https://app.mokahr.com/apply/deeproute>
+
+**职位**: 感知算法 / 预测规划算法 / Robotaxi 技术负责人 / 投融资分析师 / 产品运营经理
+
+---
+
+## 23. 网易 + 网易有道 — ✅ 招聘主页完整 (v14)
+
+- **网易校招**：<https://campus.163.com> body=155
+- **网易有道**：<https://hr.youdao.com> body=1001
+
+有道页面含 Campus Recruitment / Intern Recruitment / Experienced Hire
+
+---
+
+## 24. 虎牙 — ✅ 招聘主页完整 (v14 直播)
+
+**v14 实测**：`hr.huya.com` body=1874
+
+- **招聘主页**：<https://hr.huya.com>
+
+**职位类别**: 技术类 / 内容运营类 / 产品类 / 设计类 / 市场品牌 / 职能
+
+---
+
+## 25. 用友 — ✅ 招聘主页完整 (v14 企业软件)
+
+**v14 实测**：`career.yonyou.com` body=991
+
+- **招聘主页**：<https://career.yonyou.com>
+
+**项目**: 社会招聘 / 校园招聘 / **高潜人才计划** / 实习生招聘
+
+---
+
+## 26. 猿辅导 — ✅ 招聘主页完整 (v14 教育)
+
+**v14 实测**：`hr.yuanfudao.com` body=151
+
+- **招聘主页**：<https://hr.yuanfudao.com>
+
+**职位**: 产品/研发 7 / 职能 3 / 教育/教研 10 / 硬件工程 4 / 其他 7
+
+---
+
+## 📊 完整实测结论 (v3-v14, Playwright + Chromium)
 
 | 公司 | 实测类型 | 备注 |
 |---|---|---|
@@ -386,6 +514,10 @@
 | 小鹏（飞书系） | ✅ URL 搜索有效 | `?keyword=X` (v12) |
 | 理想汽车 | ✅ functionsids 过滤 | `?project_id=4&functionsids=1` 返 28 个算法岗 (v12) |
 | 滴滴（Moka） | ✅ project 筛 | `#/jobs?project=2027` 返 6 个 (v12) |
+| 快手校招 | ✅ recruitSubProjectCodes | `recruitSubProjectCodes=20271779425607` 74 个, 0 实习 (v14) |
+| 携程 + 360 + 虎牙 + 鹰角 + 用友 + 网易 + Keep + 飞书 | ✅ 主页完整 | v14 (需进站内搜方向词) |
+| 元戎启行 (Moka) | ✅ Moka | `#/jobs?keyword=X` |
+| 美团系 (大众点评/猫眼/酒旅) | ✅ 共享美团 URL | `?hiringType=4_1&keyword=X` |
 | 阿里巴巴 | 🏠 talent.taotian.com | 主页是项目入口, 需进站内搜 |
 | 拼多多 | 🏠 career.pinduoduo.com | 营销页, 仅列出 "App专享优惠" |
 | 得物 | 🏠 dewu.com/career | Moka 404, dewu.com 是营销页 |

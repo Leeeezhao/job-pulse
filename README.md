@@ -1,7 +1,7 @@
-# job-pulse — 2026 校招算法岗情报站（实测版 v8）
+# job-pulse — 2026 校招算法岗情报站（实测版 v14）
 
-> **v13：发现 OPPO 完整校招系统 + 3 个调度 API** (但 2026 应届校招未启动)
-> **v12：调试剩 13 家公司**
+> **v14：扩展 12 家中型企业 + 美团系共享 URL**
+> **v13：发现 OPPO 完整校招系统 + 3 个调度 API**
 > **实测日期**：2026-07-07
 > **方法**：用 Playwright 启动 Chromium，对每家公司执行"打开主页 + 搜索方向词 + 验证 URL 是否生效 + body 是否真的过滤 + 验证是否含实习岗"
 
@@ -50,6 +50,25 @@
 3. 找页面能点击的元素 (“应届校招” tab / “算法与软件” 分类)
 4. 点击后看 URL 怎么变 → 抽参数 (美团 `hiringType=4_1` / 理想 `functionsids` / 滴滴 `project=2027`)
 5. 带关键词的 URL 如果会被忽略 → 改用项目筛 / 分类 ID / 项目 ID
+
+## 🆕 v14 新增 12 家中型企业
+
+| 公司 | URL | 备注 |
+|---|---|---|
+| 快手校招 | `campus.kuaishou.cn/recruit/campus/e/#/campus/jobs?recruitSubProjectCodes=20271779425607` | 2027 届应届 74 岗，0 实习 |
+| 携程 | `campus.ctrip.com` | 应届校招 + 留用实习 |
+| 360 | `campus.360.cn` | 2026 全球 + 算法快速通道 |
+| 虎牙 | `hr.huya.com` | 直播 |
+| 鹰角 | `career.hypergryph.com` | 明日方舟母公司 |
+| Keep | `hr.keep.com` | 运动健康 + AI |
+| 飞书 | `www.feishu.cn/jobs` | 字节系 |
+| 元戎启行 | `app.mokahr.com/apply/deeproute` | Moka 自动驾驶 |
+| 网易 | `campus.163.com` | 163 |
+| 网易有道 | `hr.youdao.com` | 有道 |
+| 用友 | `career.yonyou.com` | 企业软件 SaaS |
+| 猿辅导 | `hr.yuanfudao.com` | 教育 |
+
+**美团系共享 URL**（v14 发现）: `zhaopin.meituan.com/web/position?hiringType=4_1&keyword=X` 同时适用于大众点评 / 猫眼 / 美团酒旅。
 
 ## 🎯 v9/v10 实习过滤关键发现
 
