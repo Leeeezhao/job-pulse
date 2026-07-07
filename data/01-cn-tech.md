@@ -7,7 +7,7 @@
 
 ## ⚠️ 重要说明
 
-通过实际打开浏览器测试（v3-v12 累计 25 家公司），**以下 8 家公司 URL 搜索参数真实生效**：
+通过实际打开浏览器测试（v3-v13 累计 26+ 家公司），**以下 8 家公司 URL 搜索参数真实生效**：
 
 | 公司 | 真实 URL 模板 | 实测状态 |
 |---|---|---|
@@ -281,6 +281,33 @@
 
 ---
 
+## 10g. OPPO — ✅ 校招主页 + 调度 API (v13)
+
+**v13 实测重大突破**：
+- 主页：`https://careers.oppo.com/campus` (项目入口页, body=1172)
+- **职位列表**：`https://careers.oppo.com/university/oppo/campus` (返 25 个在招岗位)
+- **发现 3 个真实 API**：
+  - `https://careers.oppo.com/openapi/position/project/list` (招聘项目列表)
+  - `https://careers.oppo.com/openapi/position/project/querySpecialRecruitment` (AI人才专项等)
+  - `https://careers.oppo.com/openapi/system/dictionary/queryList?code=RECRUIT-TYPE`
+
+**当前状态**（重要）：**2026 应届校招暂未启动**
+- 招聘项目只有 `2026 届博士生招聘` (id=24) 和 `2027 届寻梦实习招聘` (id=29)
+- 主页显示 “应届生暂未开始”
+- 推测 2026.9 启动 2027 届校招
+- **可立即查**: 25 个在招职位 (主要是博士生岗 + 实习生岗)
+
+- **校招主页**：<https://careers.oppo.com/campus>
+- **职位列表**：<https://careers.oppo.com/university/oppo/campus> (25 个岗位, AI/算法类仅含博士生岗位)
+- **API**: 项目列表 API 返回 `idRecruitProject=24/29` 两个招聘项目
+- **热门方向 (博士岗)**: 高级机器学习研究员（健康方向）、高级 AI 研究员、语音算法、推荐算法、视觉算法
+
+> **将来“” 应届校招启动后, 可用以上 URL 查 AI/算法类职位。**
+
+
+
+---
+
 
 
 - **校招官网**：<https://campus.kuaishou.cn/>（主页是营销页，需点"校园招聘"按钮）
@@ -368,7 +395,7 @@
 | 京东 | 🏠 campus.jd.com/#/jobs | URL 参数被忽略 |
 | 华为 | 🏠 career.huawei.com | **强制登录**, 需 uniportal.huawei.com |
 | 小米 | 🏠 hr.xiaomi.com/campus/list | 2018 年过期数据 |
-| OPPO | 🏠 careers.oppo.com | 全是营销页 |
+| OPPO | ✅ `/university/oppo/campus` (项目入口页, 25 岗) | 2026 应届校招未启动, 只有博士 + 2027 实习 |
 | 快手 | 🏠 campus.kuaishou.cn | 主页是营销页 |
 
 ## 关键经验
