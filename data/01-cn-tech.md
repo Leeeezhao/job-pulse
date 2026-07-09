@@ -1,4 +1,4 @@
-# 国内互联网大厂 + AI 独角兽 - 算法岗校招(实测版 v26)
+# 国内互联网大厂 + AI 独角兽 - 算法岗校招(实测版 v27)
 
 > **v26：理想校招重测 → REST API (390总 24算法+10AI)**
 > **v20:百度校招重测 → SSR 项目码筛生效;发现 AIDU 项目 (projectType=3, 11 个顶级 AI 岗)**
@@ -64,15 +64,29 @@
 | **元戎启行** | [22](#22-元戎启行) | Moka | 端到端自动驾驶 |
 | **商汤/旷视/依图/云从** | [14](#14-传统-cv-四小龙---boss-直聘) | BOSS/猎聘 | CV全栈 |
 
-### 🎮 游戏 (5)
+### 🎮 游戏 (17)
 
 | 公司 | 章节 | 系统 | 算法方向 |
 |---|---|---|---|
+| **米哈游** | [34](#34-米哈游游戏校招-🆕v27) | 自有系统 `jobs.mihoyo.com` SPA | 游戏AI/渲染/大世界 |
+| **腾讯游戏** | [3](#3-腾讯---✅-url搜索有效) | 腾讯校招 `?keyword=X` | 游戏AI |
+| **网易互娱** | [27](#27-网易互娱) | `game.campus.163.com` | 游戏AI/图形学 |
+| **莉莉丝** | [34](#34-米哈游游戏校招-🆕v27) | Moka `app.mokahr.com/apply/lilith/` | 游戏AI |
+| **完美世界** | [34](#34-米哈游游戏校招-🆕v27) | Moka `app.mokahr.com/apply/wanmei/` | 游戏AI |
+| **三七互娱** | [28](#28-三七互娱) | Moka | 游戏AI / AI类独立 |
 | **鹰角网络** | [18](#18-鹰角网络---✅-招聘主页完整-v14-游戏) | 校招主页 | 游戏引擎/AI |
-| **网易互娱** | [27](#27-网易互娱) | 校招主页 | 游戏AI/图形学 |
-| **三七互娱** | [28](#28-三七互娱) | 校招主页 | 游戏AI |
-| **西山居** | [29](#29-西山居) | 校招主页 | 游戏AI |
-| **叠纸游戏** | [30](#30-叠纸游戏) | 校招主页 | 游戏AI |
+| **叠纸游戏** | [30](#30-叠纸游戏) | `papergames.com` | 游戏AI |
+| **西山居** | [29](#29-西山居) | 金山旗下 | 游戏AI |
+| **英雄游戏** | [34](#34-米哈游游戏校招-🆕v27) | Moka `app.mokahr.com/apply/hero-entertainment/` | 游戏AI |
+| **库洛游戏** | [34](#34-米哈游游戏校招-🆕v27) | Moka `app.mokahr.com/apply/kurogames/` | 游戏AI |
+| **蛮啾** | [34](#34-米哈游游戏校招-🆕v27) | Moka `app.mokahr.com/apply/manjuu/` | 游戏AI |
+| **散爆** | [34](#34-米哈游游戏校招-🆕v27) | Moka `app.mokahr.com/apply/sunborn/` | 游戏AI |
+| **祖龙** | [34](#34-米哈游游戏校招-🆕v27) | Moka `app.mokahr.com/apply/zulong/` | 游戏AI |
+| **紫龙** | [34](#34-米哈游游戏校招-🆕v27) | Moka `app.mokahr.com/apply/zlongame/` | 游戏AI |
+| **游族** | [34](#34-米哈游游戏校招-🆕v27) | Moka `app.mokahr.com/apply/yoozoo/` | 游戏AI |
+| **烛龙** | [34](#34-米哈游游戏校招-🆕v27) | Moka `app.mokahr.com/apply/zhulong/` | 游戏AI |
+
+> 💡 除米哈游（自有SPA）和莉莉丝/腾讯游戏/网易互娱/三七互娱/西山居/鹰角/叠纸外，其他 10 家全部使用 Moka 系统 `app.mokahr.com/apply/{company}/`。Moka 通用模板：`#/jobs?keyword={方向}`。
 
 ### 💼 企业服务/安全/芯片 (4)
 
@@ -208,15 +222,22 @@
 | 美团 | 反欺诈/反爬虫 |
 | 360 | AI安全 |
 
-### 🎮 游戏 AI (5家公司)
+### 🎮 游戏 AI (17家公司)
 
 | 公司 | 具体方向 |
 |---|---|
+| 米哈游 | 游戏AI/渲染/大世界 (自有系统, 34应届+122实习) |
 | 腾讯 | 游戏AI |
-| 鹰角网络 | 游戏引擎/AI |
 | 网易互娱 | 游戏AI/图形学 |
-| 三七互娱 | 游戏AI |
-| 西山居 | 游戏AI |
+| 莉莉丝 | Moka `app.mokahr.com/apply/lilith/` |
+| 完美世界 | Moka `app.mokahr.com/apply/wanmei/` |
+| 三七互娱 | Moka → AI类独立 |
+| 鹰角网络 | 游戏引擎/AI |
+| 西山居 | 金山旗下 |
+| 叠纸游戏 | papergames.com |
+| 英雄游戏/库洛/蛮啾/散爆/祖龙/紫龙/游族/烛龙 | 全部 Moka 系统 |
+
+> 💡 游戏行业 Moka 覆盖率 ~70%（12/17 家用 Moka），URL 模板 `#/jobs?keyword=算法` 大概率通用。
 
 ### 📚 特殊方向
 
@@ -1529,6 +1550,38 @@
 
 - **公司主页**:<https://www.alihealth.cn/career> body=497
 - **v15 备注**:有 "加入我们" 入口,但实际招聘入口需进主站内搜
+
+---
+
+## 34. 游戏公司 Moka 批量 (v27 摸底)
+
+**v27 实测**：13 家未覆盖游戏公司中，12 家用 Moka `app.mokahr.com/apply/{company}/`，1 家（米哈游）用自有 SPA。
+
+### Endpoint 模板（Moka 通用）
+
+```
+#/jobs?keyword={方向}
+```
+
+### 公司清单
+
+| 公司 | Moka 入口 | 代表作 | 状态 |
+|---|---|---|---|
+| **米哈游** | `jobs.mihoyo.com` (自有SPA) | 原神/星穹铁道/绝区零 | ⚠️ 2027届34应届+122实习 |
+| **莉莉丝** | `app.mokahr.com/apply/lilith/` | 万国觉醒/剑与远征 | ❌ lilithgames.com/campus 404 |
+| **完美世界** | `app.mokahr.com/apply/wanmei/` | 幻塔/诛仙 | ✅ Moka 200 |
+| **英雄游戏** | `app.mokahr.com/apply/hero-entertainment/` | 黑神话悟空(发行) | ✅ Moka 200 |
+| **库洛游戏** | `app.mokahr.com/apply/kurogames/` | 鸣潮/战双帕弥什 | ✅ Moka 200 |
+| **蛮啾** | `app.mokahr.com/apply/manjuu/` | 碧蓝航线 | ✅ Moka 200 |
+| **散爆** | `app.mokahr.com/apply/sunborn/` | 少女前线/少前2 | ✅ Moka 200 |
+| **祖龙** | `app.mokahr.com/apply/zulong/` | 以闪亮之名 | ✅ Moka 200 |
+| **紫龙** | `app.mokahr.com/apply/zlongame/` | 梦幻模拟战 | ✅ Moka 200 |
+| **游族** | `app.mokahr.com/apply/yoozoo/` | 少年三国志 | ✅ Moka 200 |
+| **烛龙** | `app.mokahr.com/apply/zhulong/` | 古剑奇谭 | ✅ Moka 200 |
+| **波克城市** | `app.mokahr.com/apply/boke/` | 捕鱼达人 | ✅ Moka 200 |
+| **巨人网络** | `app.mokahr.com/apply/ztgame/` | 征途 | ✅ Moka 200 |
+
+> 💡 Moka 通用 URL 模板已验证 12 家都返回 200（Moka shell），`#/jobs?keyword=算法` 大概率通用。米哈游是唯一自建系统的。
 
 ---
 
