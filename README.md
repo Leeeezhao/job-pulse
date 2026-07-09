@@ -1,6 +1,6 @@
-# job-pulse — 2026 校招算法岗情报站（实测版 v19）
+# job-pulse — 2026 校招算法岗情报站（实测版 v20）
 
-> **v19：大疆校招重测 → Moka 投递系统 + #/jobs?keyword=X 真过滤，54 个算法岗全部可点**
+> **v20：百度校招重测 → SSR 项目码筛生效；发现 AIDU 项目 (11 个顶级 AI 岗，类似字节 Top Seed)**
 > **v18：快手校招重测 → v14 `?keyword=X` 已失效；发现 13 个类目码 (J1005 推荐/J1006 广告/...) 真过滤**
 > **v17：拼多多已迁移到 careers.pddglobalhr.com，22 个校招岗位真实列表 (含 AI Infra/大模型算法核心岗)**
 > **v16：小米校招实测 → 飞书 mioffice 系统，URL keywords 搜索真实有效**
@@ -16,7 +16,7 @@
 |---|---|---|
 | ✅ **URL 搜索真实有效** | 6 | 字节 / 美团 / 腾讯 / 知乎 / vivo / 小米(feishu) |
 | ❌ **URL 搜索失效** | 3 | 阿里 / 拼多多 / 滴滴 |
-| 🏠 **校招子站（需站内搜）** | 7 | 百度 / 京东 / 华为 / 理想 / 得物 / 小红书 / 小鹏 |
+| 🏠 **校招子站（需站内搜）** | 6 | 京东 / 华为 / 理想 / 得物 / 小红书 / 小鹏 |
 
 **重要**：之前 v1/v2 的链接**大量瞎写**——以为 `?keywords=X` 在所有公司都有效。Playwright 实测证明**可用的 8 家**，且**部分公司需要用 project ID / functionsids 代替关键词**。
 
@@ -38,6 +38,7 @@
 | 得物 | 🏠 | Moka URL 404, dewu.com/career 是营销页 |
 | 小红书 | 🏠 | URL 参数被忽略 |
 | 大疆 | ✅ | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` (Moka) |
+| 百度 | ✅ | `talent.baidu.com/jobs/list?projectType=X` (SSR 项目码筛) |
 | 百度 | 🏠 | talent.baidu.com 反爬 |
 | 京东 | 🏠 | URL 参数被忽略 |
 | 华为 | 🏠 | 强制登录 uniportal.huawei.com |
@@ -53,6 +54,37 @@
 3. 找页面能点击的元素 (“应届校招” tab / “算法与软件” 分类)
 4. 点击后看 URL 怎么变 → 抽参数 (美团 `hiringType=4_1` / 理想 `functionsids` / 滴滴 `project=2027`)
 5. 带关键词的 URL 如果会被忽略 → 改用项目筛 / 分类 ID / 项目 ID
+
+## 🆕 v20 百度校招实测
+
+**项目名：AIDU（百度版 Top Seed）** —— 人才专项计划
+
+URL 模板（SSR 项目码筛）：
+- **默认 157 岗**：<https://talent.baidu.com/jobs/list>
+- **校招项目=1（145 岗）**：<https://talent.baidu.com/jobs/list?projectType=1>
+- **AIDU 项目=3（11 个顶级 AI 岗）**：<https://talent.baidu.com/jobs/list?projectType=3> ⭐
+- **管培生项目=4（12 个）**：<https://talent.baidu.com/jobs/list?projectType=4>
+- **实习生（399 岗）**：<https://talent.baidu.com/jobs/list?recruitType=INTERN>
+
+**AIDU 11 个顶级岗位**（人才专项）：大模型算法 / 多模态算法 / AI 异构计算 / 语音大模型 / 大模型 Infra / 智能体算法 / Agent 应用全栈 / 基础模型架构师 / 端到端系统架构师 / 视觉-语言模型架构师。
+
+**v20 SSR 返回的项目数据**：
+```json
+window.__INITIAL_DATA__ = {
+  "listData": {
+    "keyWord": "",                  // ⚠️ URL 参数被忽略
+    "projectType": "3",             // ✅ 项目码生效
+    "recruitType": "GRADUATE",
+    "postList": [1=技术, 2=产品, 13=政企, 14=销售, 15=综合],
+    "workPlaceList": [1100=北京, 3100=上海, 4403=深圳, ...],
+    "graduateProjectList": [1=校招, 3=AIDU, 4=管培],
+    "total": 11,                    // AIDU 真实总数
+    "listDetailData": [...]         // 11 个岗位 全部 SSR 渲染
+  }
+}
+```
+
+> 🚨 **属性设定**：SSR 返窗口内嵌 JSON，但 `keyWord / workPlace / postType` 参数被 SSR 忽略，只有 `projectType / recruitType` 生效。位置/关键词篏必须进站内点类目。
 
 ## 🆕 v19 大疆校招实测
 

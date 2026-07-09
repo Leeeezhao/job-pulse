@@ -1,13 +1,14 @@
-# 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v19）
+# 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v20）
 
+> **v20：百度校招重测 → SSR 项目码篏生效；发现 AIDU 项目 (projectType=3, 11 个顶级 AI 岗)**
 > **v19：大疆校招实测 → 发现 Moka 投递系统 + #/jobs?keyword=X 真过滤，54 个算法岗全部可点**
 > **v18：快手校招重测 → v14 的 `?keyword=X` 已失效，需站内点类目码篏（新增项目码字典）**
 > **v17：拼多多迁移到新域名 careers.pddglobalhr.com，22 个岗位全部找到（含云弧计划核心算法岗）**
 > **v16：小米校招系统重新实测 → 发现飞书（mioffice）投递系统，URL keywords 搜索真实有效**
 > **v15：添加 7 家中型企业（网易互娱/三七互娱/西山居/叠纸/深信服/摩尔线程/阿里健康）**
 > **实测日期**：2026-07-09
-> **实测公司**：44+ 家（v3-v18 累计）
-> **实测结果**：✅ 13 家 URL 搜索真实有效 + 🏠 快手站内类目码篏 + 🏠 拼多多站内筛
+> **实测公司**：44+ 家（v3-v20 累计）
+> **实测结果**：✅ 15 家 URL 搜索/项目码有效 + 🏠 快手站内类目码筛 + 🏠 拼多多站内筛
 
 ## ⚠️ 重要说明
 
@@ -26,6 +27,7 @@
 | **滴滴（Moka）** | `#/jobs?project=2027` (项目筛代替关键词) | ✅ v12 实测 |
 | **快手校招** | `#/campus/jobs?recruitSubProjectCodes=20271779425607` | ✅ v14 项目筛 (74 岗, 0 实习) / v18 `?keyword=` 失效，改站内类目码 |
 | **大疆校招** | `#/jobs?keyword={方向}` | ✅ v19 Moka (拓疆者, 138 岗, keyword=算法 返 54) |
+| **百度校招** | `?projectType=1/3/4` | ✅ v20 SSR 项目码；AIDU=11/校招=145/管培=12 |
 | **小米（飞书系）** | `?keywords={方向}` | ✅ v16 实测 (飞书 mioffice 系统) |
 | **智谱 / 月之暗面 / MiniMax / 百川（元戎启行等 Moka / 飞书系）** | `#/jobs?keyword={方向}` 或 `?keyword={方向}` | ✅ 实测确认 |
 
@@ -141,16 +143,84 @@
 
 ---
 
-## 5. 百度 — 未实测（沿用 v2 的合理 URL）
+## 5. 百度 — ✅ 项目码篏 (v20 重测)
 
-- **校招官网**：<https://talent.baidu.com/jobs>
+**v20 重测重大发现**（2026-07-09）：v3 "未实测"是错的。实际上 SSR 返 `window.__INITIAL_DATA__` 含完整列表，项目码篏垍 — 已经能動！
 
-| 方向 | 链接（待实测） |
-|---|---|
-| 推荐 | <https://talent.baidu.com/jobs?keyword=%E6%8E%A8%E8%8D%90> |
-| 搜索 | <https://talent.baidu.com/jobs?keyword=%E6%90%9C%E7%B4%A2> |
-| NLP | <https://talent.baidu.com/jobs?keyword=NLP> |
-| 大模型 | <https://talent.baidu.com/jobs?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B> |
+**URL 模板**（项目码 × 招聘类型）：
+- 默认无参：`https://talent.baidu.com/jobs/list` → 157 个应届岗位 (需打开后加详情)
+- **`?projectType=1`** ✅ → 145 普通校招
+- **`?projectType=3`** ✅✅ → **11 个 AIDU 项目核心 AI 岗** (人才专项，类似字节 Top Seed / 拼多多云弧)
+- **`?projectType=4`** ✅ → 12 个管培生项目（**非算法**）
+- **`?recruitType=INTERN`** ✅ → 399 个实习岗位
+
+**参数状态总结**:
+
+| 参数 | 是否生效 | 返 total | 备注 |
+|---|---|---|---|
+| `projectType=1/3/4` | ✅ | 145/11/12 | 项目码篏，实测生效 |
+| `recruitType=GRADUATE/INTERN/SOCIAL` | ✅ | 157/399/? | 应届/实习/社招 |
+| `keyWord=` | ❌ | 157 | SSR 不读 |
+| `workPlace=` | ❌ | 157 | SSR 不读 |
+| `postType=` | ❌ | 157 | SSR 不读 (技术/产品/销售 等不生效) |
+| `curPage`/`pageSize` | ❌ (部分） | SSR 始终返 10 个 | 需 client-side fetch |
+
+### 🆕 AIDU 项目 (百度版 Top Seed) — 11 个顶级 AI 岗
+
+- **2027AIDU-大模型算法工程师** (北京市+深圳市) ⭐
+- **2027AIDU-多模态算法工程师** (北京市+上海市)
+- **2027AIDU-AI异构计算研发工程师** (北京市+上海市)
+- **2027AIDU-语音大模型算法工程师** (北京市)
+- **2027AIDU-大模型Infra工程师** (北京市)
+- **2027AIDU-智能体算法工程师** (北京市)
+- **2027AIDU-Agent应用全栈工程师** (北京市)
+- **2027AIDU-基础模型架构师** (北京市)
+- **2027AIDU-端到端系统架构师** (北京市)
+- **2027AIDU-视觉-语言模型架构师** (北京市)
+- (1 个其他，需要全量手动加载)
+
+### 【项目=1】 校招普通项目中可见的技术岗（首页 8 个）
+
+- 北京-大模型训练 Infra 研发工程师 (基座研发)
+- 深圳-AI Infra 强化学习工程师 (基座研发)
+- 上海-自动驾驶视觉语言模型算法工程师
+- 深圳-智能体算法工程师
+- 大连-智能体算法工程师
+- 上海-搜广推算法工程师
+- 上海-云计算虚拟化研发工程师
+- 上海-自动驾驶端到端决策规划控制算法工程师
+
+### v20 字典数据 (从 SSR __INITIAL_DATA__ 取)
+
+**postType 字典**：
+- `1`=技术 / `2`=产品 / `13`=政企 / `14`=销售 / `15`=综合
+
+**projectType 字典**：
+- `1`=校招 (项目=3+项目=4 之外的所有 145 个)
+- `3`=AIDU项目 (11 个顶级 AI)
+- `4`=管培生项目 (~12 个)
+
+**workPlace 字典**（含 14 个城市）：
+- `1100`=北京市 / `3100`=上海市 / `4403`=深圳市 / `4401`=广州市 / `5101`=成都市 / `2102`=大连市 / `1403`=阳泉市 / `4201`=武汉市 / `3301`=杭州市 / `3501`=福州市 / `4419`=东莞市 / `4601`=海口市 / `3701`=济南市 / `9000`=全国
+
+- **校招官网（全列表）**：<https://talent.baidu.com/jobs/list>
+- **校招项目（1）：145 岗**：<https://talent.baidu.com/jobs/list?projectType=1>
+- **AIDU 项目（3）：11 顶级 AI 岗**（推荐）：<https://talent.baidu.com/jobs/list?projectType=3>
+- **管培生项目（4）：12 个**：<https://talent.baidu.com/jobs/list?projectType=4>
+- **实习生招聘**：<https://talent.baidu.com/jobs/list?recruitType=INTERN>
+- **社会招聘**（独立子站）：<https://talent.baidu.com/jobs/social>
+- **邮箱**：hrcampus@baidu.com
+
+| 方向 | 链接 | 类型 |
+|---|---|---|
+| AIDU 大模型/多模态/智能体 (11 岗) | <https://talent.baidu.com/jobs/list?projectType=3> | 🔍 |
+| AIDU Infra 算子 (11 岗中包含) | <https://talent.baidu.com/jobs/list?projectType=3> | 🔍 |
+| 校招普通项目 (145 岗) | <https://talent.baidu.com/jobs/list?projectType=1> | 🔍 |
+| 实习生 (399 岗) | <https://talent.baidu.com/jobs/list?recruitType=INTERN> | 🔍 |
+
+> 🚨 **重点**: 百度校招算法岗集中在 **AIDU 项目**（11 个，纯顶级）和 **项目1** 中首页可见的 **8 个技术岗**（全是 AI Infra / 自动驾驶 / 智能体 / 搜广推）。管培生项目（4）主要是销售/产品/运营，**不是算法岗**。
+> **关键词搜索失效**：`?keyWord=` / `?workPlace=` / `?postType=` 都不生效，需进站内点类目筛。
+> **SSR 返限量**：SSR 仅返 10 个职位。完整 145/11 需在浏览器内点 load-more (client-side fetch `/httservice/api/position/list`)。
 | 自动驾驶 | <https://talent.baidu.com/jobs?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6> |
 
 > ⚠️ 这些 URL 格式基于"看起来合理"猜测，**百度未实测**。建议优先用首页。
@@ -736,7 +806,7 @@
 | 得物 | 🏠 dewu.com/career | Moka 404, dewu.com 是营销页 |
 | 小红书 | 🏠 job.xiaohongshu.com/campus/positions | 返 "热招职位", URL 参数被忽略 |
 | 大疆 | ✅ Moka 拓疆者 (project=143359) | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` 138 岗, 算法 54 (v19) |
-| 百度 | 🏠 talent.baidu.com | `{"status":"need-login"}` 反爬 |
+| 百度 | ✅ SSR 项目码 | `talent.baidu.com/jobs/list?projectType=X` 生效；AIDU=11/校招=145 (v20) |
 | 京东 | 🏠 campus.jd.com/#/jobs | URL 参数被忽略 |
 | 华为 | 🏠 career.huawei.com | **强制登录**, 需 uniportal.huawei.com |
 | 小米 | ✅ | `xiaomi.jobs.f.mioffice.cn/campus/?keywords=X` (v16 飞书系统) |
