@@ -1,4 +1,4 @@
-# 国内互联网大厂 + AI 独角兽 - 算法岗校招(实测版 v24)
+# 国内互联网大厂 + AI 独角兽 - 算法岗校招(实测版 v25)
 
 > **v24:小鹏校招重测 → CSR 双参数 (467 总 + 116 算法岗)**
 > **v20:百度校招重测 → SSR 项目码筛生效;发现 AIDU 项目 (projectType=3, 11 个顶级 AI 岗)**
@@ -8,7 +8,7 @@
 > **v16:小米校招系统重新实测 → 发现飞书(mioffice)投递系统,URL keywords 搜索真实有效**
 > **v15:添加 7 家中型企业(网易互娱/三七互娱/西山居/叠纸/深信服/摩尔线程/阿里健康)**
 > **实测日期**:2026-07-09
-> **实测公司**：44+ 家（v3-v24 累计）
+> **实测公司**：44+ 家（v3-v25 累计）
 > **实测结果**:✅ 16 家 URL 搜索/项目码/API 有效 + 🏠 快手站内类目码筛 + 🏠 拼多多站内筛
 
 ## ⚠️ 重要说明
@@ -825,13 +825,66 @@
 
 ---
 
-## 10f. 得物 - 🏠 营销页 (v12)
+## 10f. 得物 — ✅ CSR URL搜索 (v25 重测)
 
-**v12 实测结果**:`https://app.mokahr.com/apply/dewu/0` 返 "您访问的页面不存在"。`https://www.dewu.com/career` 返营销页(body=956 char)。Moka 子页 lottery:genze002
+**v25 重测**（2026-07-09）：飞书系，Moka 已迁移。校招官网 `campus.dewu.com` 跳转 `/578078/position/list`。24 个总岗位中仅 8 个算法岗，全部为「研究型实习生项目」。curl 只拿 SSR 壳（58KB），用 Playwright。
 
-- **招聘主页**:<https://www.dewu.com/career>
+### Endpoint 模板
 
-> 可同时查 BOSS直聘 / 内推群
+- **校招 SPA 入口**：<https://campus.dewu.com/578078/position/list>
+- **关键词搜索**：
+  ```
+  /578078/position/list?keywords=算法&current=1&limit=10
+  ```
+- **详情 URL**：<https://campus.dewu.com/578078/position/{id}/detail>
+
+### 搜索统计
+
+| 搜索词 | 总数 |
+|---|---|
+| 无过滤 | 24 |
+| 算法 | 8 |
+| 大模型 | 6 |
+| AI | 7 |
+| 推荐 | 4 |
+| 研究型实习生 | 7 |
+
+### 24 岗位总览
+
+**招聘项目**（侧栏树形筛选）：
+- 日常实习项目 → 研究型实习生项目 / 社招实习
+- 【校招】暑期实习生 → 2027届实习生项目
+
+**职能分类**（6 类）：供应链类 / 实习专区 / 技术类 / 设计类 / 运营类 / 职能类
+
+**城市**（7）：上海 杭州 广州 廊坊 沈阳 武汉 咸阳
+
+### 8 个算法岗（全部研究型实习生项目）
+
+| 岗位名 | 工作地 | 方向 |
+|---|---|---|
+| 【研究型实习生】生成式重排 | 上海 | LLM+RL 搜索重排 |
+| 【研究型实习生】生成式相关性大模型（交易） | 杭州/上海 | LLM/VLM 电商搜索 |
+| 【研究型实习生】空间理解和推理 | 上海 | 3D视觉+多模态生成 |
+| 【研究型实习生】交易多模态大模型 | 上海 | VLM 商品理解+推理 |
+| 【研究型实习生】生成式召回（交易瀑布流推荐） | 上海 | LLM推荐SID召回 |
+| 【研究型实习生】排序模型参数scaling的调研（社区推荐精排） | 上海 | 大模型排序 |
+| 【研究型实习生】多场景生成式大模型（交易） | 杭州 | LLM搜索问答Agent |
+
+### 关键领域分布
+
+- **搜索/相关性**：生成式重排(RL+Listwise) / 相关性大模型(VLM/LLM电商搜索) / 多场景生成式(Agent+Deep Research)
+- **推荐**：生成式召回(SID+Scaling) / 排序Scaling(大模型参数量→涌现)
+- **多模态**：交易多模态大模型(VLM) / 空间理解推理(3D+多模态)
+- **核心能力**：LLM/RL → 搜索推荐 / VLM → 商品理解 / Agent+Deep Research → 智能问答
+
+> 🚨 **重点**：得物算法岗全为「研究型实习生项目」，偏 Intern+论文产出。没有正式 2027 届算法岗。适合有顶会论文意愿的同学投。属于潮鞋电商 + 内容社区场景。URL keywords 单参数传 SEO 可生效。Moka 入口 `app.mokahr.com/apply/dewu` 已废。
+
+| 方向 | 链接 | 类型 |
+|---|---|---|
+| 校招主页 | <https://campus.dewu.com/578078/position/list> | 🔍 |
+| 算法岗（8个） | `?keywords=算法` (需浏览器) | 🔍 |
+| 大模型岗（6个） | `?keywords=大模型` (需浏览器) | 🔍 |
 
 ---
 
@@ -1208,7 +1261,7 @@
 | 美团系 (大众点评/猫眼/酒旅) | ✅ 共享美团 URL | `?hiringType=4_1&keyword=X` |
 | 阿里巴巴 | 🏠 talent.taotian.com | 主页是项目入口, 需进站内搜 |
 | 拼多多 | 🏠 careers.pddglobalhr.com/campus/grad | URL 搜索失效,需进站内筛类别 (v17 新域名, 22 岗位) |
-| 得物 | 🏠 dewu.com/career | Moka 404, dewu.com 是营销页 |
+| 得物 | 🔍 | `campus.dewu.com/578078/position/list` CSR (24总 8算法全研究型实习生) (v25) |
 | 小红书 | ✅ POST API | `POST job.xiaohongshu.com/websiterecruit/position/pageQueryPosition` (332 校园) |
 | 大疆 | ✅ Moka 拓疆者 (project=143359) | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` 138 岗, 算法 54 (v19) |
 | 百度 | ✅ SSR 项目码 | `talent.baidu.com/jobs/list?projectType=X` 生效;AIDU=11/校招=145 (v20) |
