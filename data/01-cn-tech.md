@@ -1,10 +1,12 @@
-# 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v16）
+# 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v18）
 
+> **v18：快手校招重测 → v14 的 `?keyword=X` 已失效，需站内点类目码篏（新增项目码字典）**
+> **v17：拼多多迁移到新域名 careers.pddglobalhr.com，22 个岗位全部找到（含云弧计划核心算法岗）**
 > **v16：小米校招系统重新实测 → 发现飞书（mioffice）投递系统，URL keywords 搜索真实有效**
 > **v15：添加 7 家中型企业（网易互娱/三七互娱/西山居/叠纸/深信服/摩尔线程/阿里健康）**
 > **实测日期**：2026-07-09
-> **实测公司**：44+ 家（v3-v16 累计）
-> **实测结果**：✅ 13 家 URL 搜索真实有效（新增小米），其余 🏠 需进站内搜
+> **实测公司**：44+ 家（v3-v18 累计）
+> **实测结果**：✅ 13 家 URL 搜索真实有效 + 🏠 快手站内类目码篏 + 🏠 拼多多站内筛
 
 ## ⚠️ 重要说明
 
@@ -21,7 +23,7 @@
 | **小鹏（飞书系）** | `?keyword={方向}` | ✅ v12 实测 |
 | **理想汽车** | `?project_id=4&functionsids={分类ID}` | ✅ v12 实测 (函数 ID 代替关键词) |
 | **滴滴（Moka）** | `#/jobs?project=2027` (项目筛代替关键词) | ✅ v12 实测 |
-| **快手校招** | `#/campus/jobs?recruitSubProjectCodes=20271779425607` | ✅ v14 实测, 0 实习 |
+| **快手校招** | `#/campus/jobs?recruitSubProjectCodes=20271779425607` | ✅ v14 项目筛 (74 岗, 0 实习) / v18 `?keyword=` 失效，改站内类目码 |
 | **小米（飞书系）** | `?keywords={方向}` | ✅ v16 实测 (飞书 mioffice 系统) |
 | **智谱 / 月之暗面 / MiniMax / 百川（元戎启行等 Moka / 飞书系）** | `#/jobs?keyword={方向}` 或 `?keyword={方向}` | ✅ 实测确认 |
 
@@ -240,12 +242,6 @@
 
 ---
 
-## 10. 快手 — 🏠 主页=营销页 (Playwright 实测)
-
-- **校招官网**：<https://campus.kuaishou.cn/>（主页是营销页，需点"校园招聘"按钮）
-
----
-
 ## 10a. 蔚来 — ✅ URL搜索有效 (v12 飞书系)
 
 **v12 实测结果**：`?keyword=推荐` 返 15 个岗位（1 个实习 = 7%）。`?keyword=NLP` 返 7 个（0 实习）。
@@ -435,18 +431,58 @@
 
 ---
 
-## 15. 快手校招 — ✅ URL 参数有效 (v14 校招系统)
+## 15. 快手校招 — ✅ 项目篏 + 类目码 (v18 重测)
 
-**v14 实测重大发现**：快手校招完全可用。点击主页三个 tab 后 URL 会变。
+**v18 重测重大发现**（2026-07-09）：v14 里说的 `?keyword=X` 已经失效！
 
-- **招聘主页**：<https://campus.kuaishou.cn/recruit/campus/e/> (含 应届招聘 / 实习招聘 / 快Star 三个 tab)
-- **2027 届应届招聘 (推荐)**：<https://campus.kuaishou.cn/recruit/campus/e/#/campus/jobs?recruitSubProjectCodes=20271779425607>
-  - body 显示 **共 74 个职位** (含 【快Star】大语言模型算法工程师、广告 AI 算法工程师、音视频大模型算法工程师)
-  - 0 实习
-- **2026 届留用实习**：<https://campus.kuaishou.cn/recruit/campus/e/#/campus/jobs?recruitSubProjectCodes=20271772783534> (全实习, 不推荐)
+- **真过滤**：项目筛 `?recruitSubProjectCodes=...` 仍✅（v14 发现的）
+- **URL `?keyword=` 现已失效**：`推荐`/`NLP`/`大模型` 三个关键词都返同样默认列表（74 个全量）
+- **后台 API**：POST `https://campus.kuaishou.cn/recruit/campus/e/api/v1/open/positions/simple`，支持：
+  - `recruitSubProjectCodes: ["20271779425607"]`（项目筛）
+  - `positionCategoryCodes: ["J1005"]`（**类目码篏，推荐类 J1005 返 10 个**）
+  - `workLocationCodes: ["beijing"]`（**城市码篏，beijing 返 72 个**）
+  - `pageSize + pageNum`（分页）
+- 但上面这些参数调用时 `total` 还是 74 不变，**实际是前端拿到全量后本地过滤**——所以「API 能用」是 JS 层面的，真正落进 URL 路由的还是项目筛一个
+
+**v18 实地分析：74 岗位全为「快Star」人才计划项目**（招聘项目 `20271779425607`），重点是类目码字典：
+
+| 类目码 | 类目名（推断） | 岗位数 | 代表岗位 |
+|---|---|---|---|
+| **J1013** | 大模型 Infra / 推理引擎 / 调度 / GPU | 14 | 基础大模型推理引擎研发、推荐大模型训练引擎、混合云 AI 推理、多模态推理平台 |
+| **J1020** | 安全 / 分布式系统 / AI Infra | 12 | 安全工程师-Agentic AI、AI Infra 工程师、大模型推理优化、系统研发-分布式存储 |
+| **J1007** | 多模态 CV / 视频生成 / AIGC | 12 | 音视频大模型算法、多模态大模型 Keye、视频生成算法 |
+| **J1005** | 推荐 | 10 | 直播推荐、推荐大模型-OneRec、社交生成式推荐、增长激励 |
+| **J1001** | 大模型算法 / Agent / 强化学习 | 8 | 具身智能算法、Agent 智能创作、用户画像、大模型强化学习 |
+| **J1004** | 搜索 | 4 | AI 搜索算法、多模态搜索、搜索大模型 |
+| **J1006** | 广告 | 4 | 广告 AI 算法、广告 Agent、广告大模型 |
+| **J1011** | 音视频体验 / 视频编码 | 4 | 智能编码、视频编码与生成、生成式视频编码 |
+| **J1003** | NLP / LLM | 2 | 大语言模型算法、大模型应用算法 |
+| **J1002** | 数据科学 | 1 | 数据科学家 |
+| **J1010** | 音频 / 语音 / 音乐 AIGC | 1 | 可灵 AI 方向 |
+| **J1014** | AI 应用 | 1 | AI 应用开发 |
+| **J1018** | 数据引擎 | 1 | 数据引擎内核研发 |
+
+**4 个工作地**：北京 72 / 上海 14 / 深圳 14 / 杭州 12 （一岗位可投多个城市）
+
+- **招聘主页**：<https://campus.kuaishou.cn/recruit/campus/e/>
+- **2027 届应届招聘**：<https://campus.kuaishou.cn/recruit/campus/e/#/campus/jobs?recruitSubProjectCodes=20271779425607> (74 岗, 全为「快Star」人才计划)
+- **2027 届实习 (含留用)**：<https://campus.kuaishou.cn/recruit/campus/e/#/campus/jobs?recruitSubProjectCodes=20271772783534>
+- **2026 届应届**：<https://campus.kuaishou.cn/recruit/campus/e/#/campus/jobs?recruitSubProjectCodes=20261749721165>
 - **快Star 人才计划主页**：<https://campus.kuaishou.cn/recruit/campus/e/#/campus/talent>
+- **项目代码字典**：`2020-2027` 届都在。应届项目 code = `20261749721165` (2026届), `20271779425607` (2027届)
 
-**关键词测试**: 应届招聘页面 `?keyword=X` 真实有效 (搜 "推荐"/"NLP"/"AI"/"搜索" 都返 18 个岗位, 0 实习)
+| 方向 | 链接 | 类型 |
+|---|---|---|
+| 快Star 主页 (人才计划) | <https://campus.kuaishou.cn/recruit/campus/e/#/campus/talent> | 🔍 |
+| 2027 届应届 (74 岗) | <https://campus.kuaishou.cn/recruit/campus/e/#/campus/jobs?recruitSubProjectCodes=20271779425607> | 🔍 |
+| 大模型 / Infra / 推理 (J1013, 14 岗) | 站内点「J1013」类目 | 🏠 |
+| 多模态 / CV / AIGC (J1007, 12 岗) | 站内点「J1007」类目 | 🏠 |
+| 推荐 (J1005, 10 岗) | 站内点「J1005」类目 | 🏠 |
+| 广告 (J1006, 4 岗) | 站内点「J1006」类目 | 🏠 |
+| 搜索 (J1004, 4 岗) | 站内点「J1004」类目 | 🏠 |
+
+> 🚨 **注意**: v14 里说 `?keyword=X` 有效是错的。到 v18 关键词已全部被忽略。正确做法是直接打开项目页面，然后在左侧点「职位类别」复选框（「J1005 推荐」「J1006 广告」等），页面会在本地用 JS 过滤，但 URL 不变。
+> 「快Star」是快手校招顶级品牌——74 个岗位全部是「快Star」人才计划。
 
 ---
 
@@ -647,7 +683,7 @@
 | 小鹏（飞书系） | ✅ URL 搜索有效 | `?keyword=X` (v12) |
 | 理想汽车 | ✅ functionsids 过滤 | `?project_id=4&functionsids=1` 返 28 个算法岗 (v12) |
 | 滴滴（Moka） | ✅ project 筛 | `#/jobs?project=2027` 返 6 个 (v12) |
-| 快手校招 | ✅ recruitSubProjectCodes | `recruitSubProjectCodes=20271779425607` 74 个, 0 实习 (v14) |
+| 快手校招 | ✅ recruitSubProjectCodes | `recruitSubProjectCodes=20271779425607` 74 个 (全快Star), `?keyword=` 已失效 (v18) |
 | 携程 + 360 + 虎牙 + 鹰角 + 用友 + 网易 + Keep + 飞书 | ✅ 主页完整 | v14 (需进站内搜方向词) |
 | 元戎启行 (Moka) | ✅ Moka | `#/jobs?keyword=X` |
 | 美团系 (大众点评/猫眼/酒旅) | ✅ 共享美团 URL | `?hiringType=4_1&keyword=X` |
