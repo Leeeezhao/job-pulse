@@ -1,7 +1,7 @@
-# job-pulse — 2026 校招算法岗情报站（实测版 v16）
+# job-pulse — 2026 校招算法岗情报站（实测版 v17）
 
+> **v17：拼多多已迁移到 careers.pddglobalhr.com，22 个校招岗位真实列表 (含 AI Infra/大模型算法核心岗)**
 > **v16：小米校招实测 → 飞书 mioffice 系统，URL keywords 搜索真实有效**
-> **v15：添加 7 家游戏/安全/芯片/医疗公司**
 > **v14：扩展 12 家中型企业 + 美团系共享 URL**
 > **v13：发现 OPPO 完整校招系统 + 3 个调度 API**
 > **实测日期**：2026-07-07
@@ -33,7 +33,7 @@
 | 理想 | ✅ | `?project_id=4&functionsids=1` (函数 ID, 不是关键词) |
 | 滴滴 | ✅ | `#/jobs?project=2027` (项目筛代替关键词) |
 | 阿里 | 🏠 | talent.taotian.com 是项目入口 |
-| 拼多多 | 🏠 | career.pinduoduo.com 是营销页 |
+| 拼多多 | 🏠 | careers.pddglobalhr.com/campus/grad (v17 新域名, 22 岗位) |
 | 得物 | 🏠 | Moka URL 404, dewu.com/career 是营销页 |
 | 小红书 | 🏠 | URL 参数被忽略 |
 | 大疆 | 🏠 | careers.dji.com 可访问但需点 "查看职位" |
@@ -52,6 +52,25 @@
 3. 找页面能点击的元素 (“应届校招” tab / “算法与软件” 分类)
 4. 点击后看 URL 怎么变 → 抽参数 (美团 `hiringType=4_1` / 理想 `functionsids` / 滴滴 `project=2027`)
 5. 带关键词的 URL 如果会被忽略 → 改用项目筛 / 分类 ID / 项目 ID
+
+## 🆕 v17 拼多多新域名 + 完整 22 岗位列表
+
+拼多多校招已迁移到**新域名**：`careers.pddglobalhr.com`（旧 `careers.pinduoduo.com` 301 跳转）。
+
+- **校招主页**：<https://careers.pddglobalhr.com/campus/grad>
+- **实习生招聘**：<https://careers.pddglobalhr.com/campus/intern>
+- **URL 搜索失效**：`?keyword=` 被忽略，需进站内点类目筛
+- **站内筛**：项目（云弧计划/技术专场/管培生...）× 类别（技术/产品/设计...）× 标签（紧缺/人才专项）
+- 当前 **22 个** 2026 校招岗位
+
+**重点「云弧计划」项目**（拼多多核心算法岗，人才专项）：
+- [AI Infra 研发工程师](https://careers.pddglobalhr.com/campus/grad) — 上海
+- [大模型算法工程师](https://careers.pddglobalhr.com/campus/grad) — 上海
+
+**技术专场其他算法岗**（站内点「技术」）：
+- AI Agent 研发工程师 / 算法工程师 / 服务端研发工程师 / 客户端 / Web 前端 / 数据分析师 / 安全工程师
+
+> 🚨 **PDD 校招基本 all in 上海**，极少数管培生在河北雄安。
 
 ## 🆕 v16 小米飞书系统实测
 
