@@ -16,7 +16,7 @@
 |---|---|---|
 | ✅ **URL 搜索真实有效** | 6 | 字节 / 美团 / 腾讯 / 知乎 / vivo / 小米(feishu) |
 | ❌ **URL 搜索失效** | 3 | 阿里 / 拼多多 / 滴滴 |
-| 🏠 **校招子站（需站内搜）** | 5 | 华为 / 理想 / 得物 / 小红书 / 小鹏 |
+| 🏠 **校招子站（需站内搜）** | 4 | 理想 / 得物 / 小红书 / 小鹏 |
 
 **重要**：之前 v1/v2 的链接**大量瞎写**——以为 `?keywords=X` 在所有公司都有效。Playwright 实测证明**可用的 8 家**，且**部分公司需要用 project ID / functionsids 代替关键词**。
 
@@ -40,9 +40,9 @@
 | 大疆 | ✅ | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` (Moka) |
 | 百度 | ✅ | `talent.baidu.com/jobs/list?projectType=X` (SSR 项目码筛) |
 | 京东 | ✅ | `POST campus.jd.com/api/wx/position/page?type=talent` (API + planId) |
+| 华为 | ✅ | `GET career.huawei.com/.../getJob/newHr/page/50/1?jobType=2` (GET API + jobType) |
 | 百度 | 🏠 | talent.baidu.com 反爬 |
 | 京东 | ✅ | `POST campus.jd.com/api/wx/position/page?type=talent` (TGT 127 顶级) |
-| 华为 | 🏠 | 强制登录 uniportal.huawei.com |
 | 小米 | ✅ | `xiaomi.jobs.f.mioffice.cn/campus?keywords=X` (v16飞书) |
 | OPPO | ✅ | 完整校招系统, 但 2026 应届未启动 |
 | 快手 | ✅ (项目筛) / 🏠 (类目码) | `?recruitSubProjectCodes=...` 真过滤；`?keyword=X` 已失效 (v18) |
@@ -55,6 +55,46 @@
 3. 找页面能点击的元素 (“应届校招” tab / “算法与软件” 分类)
 4. 点击后看 URL 怎么变 → 抽参数 (美团 `hiringType=4_1` / 理想 `functionsids` / 滴滴 `project=2027`)
 5. 带关键词的 URL 如果会被忽略 → 改用项目筛 / 分类 ID / 项目 ID
+
+## 🆕 v22 华为校招实测
+
+**Endpoint 模板**：
+- 入口 SPA：<https://career.huawei.com/reccampportal/portal5/campus-recruitment.html>
+- 列表 API：`GET /reccampportal/services/portal/portalpub/getJob/newHr/page/<pageSize>/<curPage>?jobType=2`
+- 详情 API：`GET /reccampportal/services/portal/portalpub/getJobDetail/newHr?jobId=X&dataSource=X`
+- 详情 URL SPA：<https://career.huawei.com/reccampportal/portal5/campus-recruitment-detail.html?jobId=30373&dataSource=1>
+
+**jobType 参数字典**：
+
+| jobType | 含义 | totalRows |
+|---|---|---|
+| 1 | 校招 (所有) | 92 |
+| 2 | **校招** | **198** ⭐ |
+| jobTypes=2 | 应届生专属 | 59 |
+| jobTypes=-1/-2/-3 | 实习 | 329 |
+
+**重点 18 个 AI 算法岗位 (高级 + 研究员 = 36 条)**：
+
+| 岗位名 | 地点 |
+|---|---|
+| AI算法高级工程师 / 研究员 | 深/沪/京/杭/宁/蓉/西安/苏州/东莞/武汉 |
+| 大模型算法研究员 | 京/成都/杭州/合肥/南京/沪/深 |
+| 大模型应用高级工程师 / 研究员 | 上述9市 |
+| 多模态算法高级工程师 / 研究员 | 上述9市 |
+| AI Infra高级工程师 / 研究员 | 上述8市 |
+| AI Infra高性能研发高级工程师 / 研究员 | 上述7市 |
+| 机器学习高级工程师 / 研究员 | 上述4市 |
+| 推荐搜索高级工程师 / 研究员 | 京/沪/杭/东莞/宁/深 |
+| 自然语言处理/语音语义高级工程师 | 上述7市 |
+| 自动驾驶算法高级工程师 | 京/沪/深/宁/苏/杭/西安 |
+| 计算机视觉高级工程师 | 上述8市 |
+| AI安全/隐私保护高级工程师 / 研究员 | 上述10市 |
+| 媒体算法高级工程师 | (查详情) |
+| 软件算法高级工程师 / 研究员 | (查详情) |
+| 通信算法高级工程师 / 研究员 | (查详情) |
+| 射频算法高级工程师 / 研究员 | (查详情) |
+
+> 🚨 **重点**：华为校招 API 不需登录。`jobType=2` 是真校招口径。关键词搜索被 server 忽略。
 
 ## 🆕 v21 京东校招实测
 
