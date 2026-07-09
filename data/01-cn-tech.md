@@ -1,6 +1,6 @@
-# 国内互联网大厂 + AI 独角兽 - 算法岗校招(实测版 v25)
+# 国内互联网大厂 + AI 独角兽 - 算法岗校招(实测版 v26)
 
-> **v24:小鹏校招重测 → CSR 双参数 (467 总 + 116 算法岗)**
+> **v26：理想校招重测 → REST API (390总 24算法+10AI)**
 > **v20:百度校招重测 → SSR 项目码筛生效;发现 AIDU 项目 (projectType=3, 11 个顶级 AI 岗)**
 > **v19:大疆校招实测 → 发现 Moka 投递系统 + #/jobs?keyword=X 真过滤,54 个算法岗全部可点**
 > **v18:快手校招重测 → v14 的 `?keyword=X` 已失效,需站内点类目码筛(新增项目码字典)**
@@ -8,7 +8,7 @@
 > **v16:小米校招系统重新实测 → 发现飞书(mioffice)投递系统,URL keywords 搜索真实有效**
 > **v15:添加 7 家中型企业(网易互娱/三七互娱/西山居/叠纸/深信服/摩尔线程/阿里健康)**
 > **实测日期**:2026-07-09
-> **实测公司**：44+ 家（v3-v25 累计）
+> **实测公司**：44+ 家（v3-v26 累计）
 > **实测结果**:✅ 16 家 URL 搜索/项目码/API 有效 + 🏠 快手站内类目码筛 + 🏠 拼多多站内筛
 
 ## ⚠️ 重要说明
@@ -24,7 +24,7 @@
 | **vivo** | `/home` (URL 不变, 前端 JS 搜索) | ✅ 实测确认 |
 | **蔚来(飞书系)** | `?keyword={方向}` | ✅ v12 实测 |
 | **小鹏(飞书系)** | `?keyword={方向}` | ✅ v12 实测 |
-| **理想汽车** | `?project_id=4&functionsids={分类ID}` | ✅ v12 实测 (函数 ID 代替关键词) |
+| **理想汽车** | `GET api-web.lixiang.com/.../school/job-page?project_id=4&job_function_ids=1` | ✅ API (v26) |
 | **滴滴(Moka)** | `#/jobs?project=2027` (项目筛代替关键词) | ✅ v12 实测 |
 | **快手校招** | `#/campus/jobs?recruitSubProjectCodes=20271779425607` | ✅ v14 项目筛 (74 岗, 0 实习) / v18 `?keyword=` 失效,改站内类目码 |
 | **大疆校招** | `#/jobs?keyword={方向}` | ✅ v19 Moka (拓疆者, 138 岗, keyword=算法 返 54) |
@@ -601,17 +601,87 @@
 
 ---
 
-## 10c. 理想汽车 - ✅ URL搜索有效 (v12 functionsids)
+## 10c. 理想汽车 — ✅ GET API (v26 重测)
 
-**v12 实测发现**:`https://www.lixiang.com/employ/campus/list.html?project_id=4&functionsids=1` 完美过滤 → 返 **28 个算法与软件岗位**。
-- `project_id=4` = 2026 校招项目(默认是 "校招与实习职位")
-- `functionsids=1` = 算法与软件 / `3` = 算法 / `4` = 软件测试 等
-- 这是项目 ID + 职位分类 ID,**不是关键字搜索**。
+**v26 重测**（2026-07-09）：发现 REST API！v12 `functionsids` URL 参数仍有效，但类别体系已重组。`project_id=4` = 校招项目。**不需要登录**，直接调 GET 拿全部岗位。
 
-- **校招主页**:<https://www.lixiang.com/employ/campus.html/?fromJob=1>
-- **算法与软件**:<https://www.lixiang.com/employ/campus/list.html?project_id=4&functionsids=1> (28 个)
-- **整车研发**:<https://www.lixiang.com/employ/campus/list.html?project_id=4&functionsids=2> (37 个)
-- **芯片研发**:<https://www.lixiang.com/employ/campus/list.html?project_id=4&functionsids=3> (24 个)
+### Endpoint 模板
+
+- **校招 API（核心）**：
+  ```
+  GET /osd-hr-recruitment-website/v1/recruit/school/job-page?page=1&page_size=50&project_id=4
+  ```
+- **分类过滤**：`&job_function_ids=1`（算法与软件）/ `8`（整车研发）/ `92`（芯片研发）
+- **分类树 API**：`GET .../v1/recruit/school/job/function`
+- **校招 SPA 入口**：<https://www.lixiang.com/employ/campus/list.html?project_id=4>
+- **详情 URL**：<https://www.lixiang.com/employ/campus/list.html?project_id=4&job_id={id}>
+
+### 岗位分类总览（API `job_function` 返回 10 大类 273+ 岗）
+
+| 分类ID | 名称 | 岗数 | 子类 |
+|---|---|---|---|
+| 1 | 算法与软件 | 55 | 算法/软件测试/技术运维/信息安全/车辆控制/前端/后端/OS及嵌入式/数据开发/数据分析 |
+| 8 | 整车研发 | 36 | 底盘/车身/热管理/电池/动力/增程/座舱/虚拟开发 等 17 项 |
+| 92 | 芯片研发 | 5 | 前端设计/后端设计/软件设计/芯片架构 |
+| 21 | 产品 | 13 | 软件产品/硬件产品/产品运营 |
+| 34 | 销售与服务 | 88 | 储备管理/零售/交付/售后/商业拓展等 |
+| 45 | 职能与综合管理 | 47 | 行政/法务/财务/HR/战略/品牌/政府关系等 |
+| 29 | 供应链与智能制造 | 8 | 质量安全/采购/制造 |
+| 64 | 充电网络 | 8 | 商务拓展/工程建设/策略分析 |
+| 25 | 设计 | 12 | 设计 |
+| 19 | 项目管理 | 1 | 项目管理 |
+
+> 分类 API sum=273，但 `project_id=4` 全量分页 390 岗（39页×10）= 接近 385。
+
+### 算法相关岗位（API `job_function_ids=1 + 8`，~21 个 ML/AI 岗）
+
+**算法与软件 (24岗，含 ML/AI=11，其余为软测/运维/嵌入式)**：
+
+| 岗位名 | 城市 | 类型 |
+|---|---|---|
+| 🧠 语音/全模态算法实习生 | 北京顺义 | 实习 |
+| 🧠 大模型训练推理加速实习生 | 上海 | 实习 |
+| 🧠 多模态算法实习生 | 北京顺义 | 实习 |
+| 🧠 VLA 算法实习生 | 北京顺义 | 实习 |
+| 🧠 AI工程实习生 | 北京 | 实习 |
+| 🧠 【基座模型】强化学习算法研究员-物理智能体 | 北京朝阳 | 正式 |
+| 🧠 智能体强化算法实习生 | 北京顺义 | 实习 |
+| 🧠 AI系统开发实习生 | 杭州余杭 | 实习 |
+| 🧠 强化学习算法实习生 | 北京顺义 | 实习 |
+| 🧠 AI 云原生研发实习生 | 北京 | 实习 |
+
+**整车研发 (22岗，含 ML/AI=10)**：
+
+| 岗位名 | 城市 | 类型 |
+|---|---|---|
+| 🧠 具身智能产业规划工程师 | 北京顺义 | 正式 |
+| 🧠 自主智能与AI交互研究工程师 | 北京 | 正式 |
+| 🧠 视觉感知算法实习生 | 上海嘉定 | 实习 |
+| 🧠 感知质量工程师 | 北京 | 正式 |
+| 🧠 人工智能音乐生成实习生 | 北京顺义 | 实习 |
+| 🧠 ai Agent应用研究实习生 | 北京顺义 | 实习 |
+| 🧠 LLM Agent开发实习生 | 上海嘉定 | 实习 |
+| 🧠 大模型智能体算法实习生（Prompt & Context Harness方向） | 北京 | 实习 |
+
+> **芯片研发 (5岗)**：全硬核芯片（NPU运行时/验证/模拟设计/架构），无纯算法岗。
+
+### 关键领域
+
+- **基座模型 + 物理智能体**：基座模型 RL 研究员 / 智能体 RL / Agent 应用
+- **自动驾驶感知**：VLA 算法 / 视觉感知 / 多模态算法 / 感知质量
+- **语音/全模态**：语音全模态算法
+- **大模型系统工程**：训练推理加速 / AI工程 / AI系统开发 / AI云原生
+- **具身智能**：具身机器人产业规划 / 自主智能
+- **创意 AI**：AI 音乐生成（💀 趣味岗）
+
+> 🚨 **重点**：理想 API 完整、不需登录、分页清晰。24 算法与软件岗 + 22 整车研发岗中共 ~21 个 AI/ML 方向。**基座模型 RL 研究员** 是目前见过的纯 Research 岗（汽车公司少见！）。实习生占 17/24（70%）。
+
+| 方向 | API | 类型 |
+|---|---|---|
+| 算法与软件 (24) | `GET .../job-page?project_id=4&job_function_ids=1` | ✅ API |
+| 整车研发 (22, 含 10 AI) | `GET .../job-page?project_id=4&job_function_ids=8` | ✅ API |
+| 芯片研发 (5) | `GET .../job-page?project_id=4&job_function_ids=92` | ✅ API |
+| 分类树 | `GET .../job/function` | ✅ API |
 
 ---
 
@@ -1252,7 +1322,7 @@
 | vivo | ✅ URL 搜索有效 | URL 不变, 前端 JS 搜索 (搜"推荐"返回 33 个, 搜"NLP"返回 16 个) |
 | 蔚来(飞书系) | ✅ URL 搜索有效 | `?keyword=X` (v12, 搜"推荐"返 15 个, 1 实习) |
 | 小鹏(飞书系) | 🔍 CSR 双参数 | `?keywords=算法&keyword=算法` 需 Playwright (v24) |
-| 理想汽车 | ✅ functionsids 过滤 | `?project_id=4&functionsids=1` 返 28 个算法岗 (v12) |
+| 理想汽车 | ✅ GET API | `job-page?project_id=4&job_function_ids=1` (390总 24算法) (v26) |
 | 滴滴(Moka) | ✅ project 筛 | `#/jobs?project=2027` 返 6 个 (v12) |
 | 快手校招 | ✅ recruitSubProjectCodes | `recruitSubProjectCodes=20271779425607` 74 个 (全快Star), `?keyword=` 已失效 (v18) |
 | 大疆 | ✅ Moka 拓疆者 | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` 138 岗 (v19) |
