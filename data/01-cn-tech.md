@@ -1,5 +1,6 @@
-# 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v18）
+# 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v19）
 
+> **v19：大疆校招实测 → 发现 Moka 投递系统 + #/jobs?keyword=X 真过滤，54 个算法岗全部可点**
 > **v18：快手校招重测 → v14 的 `?keyword=X` 已失效，需站内点类目码篏（新增项目码字典）**
 > **v17：拼多多迁移到新域名 careers.pddglobalhr.com，22 个岗位全部找到（含云弧计划核心算法岗）**
 > **v16：小米校招系统重新实测 → 发现飞书（mioffice）投递系统，URL keywords 搜索真实有效**
@@ -24,6 +25,7 @@
 | **理想汽车** | `?project_id=4&functionsids={分类ID}` | ✅ v12 实测 (函数 ID 代替关键词) |
 | **滴滴（Moka）** | `#/jobs?project=2027` (项目筛代替关键词) | ✅ v12 实测 |
 | **快手校招** | `#/campus/jobs?recruitSubProjectCodes=20271779425607` | ✅ v14 项目筛 (74 岗, 0 实习) / v18 `?keyword=` 失效，改站内类目码 |
+| **大疆校招** | `#/jobs?keyword={方向}` | ✅ v19 Moka (拓疆者, 138 岗, keyword=算法 返 54) |
 | **小米（飞书系）** | `?keywords={方向}` | ✅ v16 实测 (飞书 mioffice 系统) |
 | **智谱 / 月之暗面 / MiniMax / 百川（元戎启行等 Moka / 飞书系）** | `#/jobs?keyword={方向}` 或 `?keyword={方向}` | ✅ 实测确认 |
 
@@ -298,12 +300,53 @@
 
 ---
 
-## 10e. 大疆 — 🏠 校招子站 (v12)
+## 10e. 大疆 — ✅ Moka 系统 + 关键词哈希篏 (v19 重测)
 
-**v12 实测结果**：`https://careers.dji.com/zh-CN/campus/positions` 可访问。需点“查看在招职位”进入详细职位列表（不需登录，但需点几个页面）。
+**v19 实测重大发现**（2026-07-09）：
+- v12 说 "需点 查看在招职位 才能进职位列表" 仍是事实；但现在职位列表是 **Moka** 的 `apply.careers.dji.com` 平台
+- 当前 Moka **校招 project ID = 143359**（社会招聘是 170070）
+- **URL 关键词搜索有效** （Moka hash 路由）：
+  - 不带关键词：138 个岗位
+  - `#/jobs?keyword=算法`：**54 个**算法岗
+  - `#/jobs?keyword=推荐`：0 个（DJI 不做推荐算法）
+  - `#/jobs?keyword=大模型`：**6 个**大模型岗
+- 项目名：**「2027 拓疆者」校园招聘**（2026.6.25 启动，招聘 2027 届应届）
 
-- **校招主页**：<https://we.dji.com/zh-CN/campus/>
-- **职位列表**：<https://careers.dji.com/zh-CN/campus/positions>
+**v19 54 个算法岗关键列表**（keyword=算法，3 个城市：北京/上海/深圳）：
+
+- 图传 AI 算法工程师（上海）
+- **GNSS 定位算法工程师**（北京/上海/深圳）
+- **端到端决策规划算法工程师**（北京/上海/深圳）
+- **世界模型算法工程师**（北京）
+- **传感器算法工程师（激光雷达）**（深圳）
+- **SLAM 算法工程师**（北京/上海/深圳）
+- 电池算法工程师（深圳）
+- **图像算法工程师**（深圳/上海）
+- **计算机视觉算法工程师**（深圳/上海）
+- **多模态空间感知算法工程师**（北京/上海/深圳）
+- **多模态大模型算法工程师**（北京/上海/深圳，6 个）
+- **大模型推理部署算法工程师**（北京/上海/深圳，6 个）
+
+**DJI 独有算法方向**：SLAM/激光雷达感知/图传无线/GNSS 定位/端到端决策规划/世界模型 — 纯属机器人 / 无人机领域，其他大厂很少有。
+
+- **校招主页**：<https://we.dji.com/zh-CN/campus/> （老域名, 仍能跳转）
+- **校招主页（新域名）**：<https://careers.dji.com/zh-CN/campus>
+- **校招职位列表（Moka, 138 岗）**：<https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs>
+- **算法类（54 岗）**：<https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=%E7%AE%97%E6%B3%95>
+- **大模型类（6 岗）**：<https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B>
+- **社会招聘项目（170070, 475 岗）**：<https://apply.careers.dji.com/social-recruitment/dji/170070#/jobs>
+
+| 方向 | 链接 | 类型 |
+|---|---|---|
+| 全算法类（54 岗） | <https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=%E7%AE%97%E6%B3%95> | 🔍 |
+| SLAM（3 岗） | <https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=SLAM> | 🔍 |
+| 定位算法 | <https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=%E5%AE%9A%E4%BD%8D> | 🔍 |
+| 决策规划 | <https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=%E5%86%B3%E7%AD%96> | 🔍 |
+| 计算机视觉 | <https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=%E8%A7%86%E8%A7%89> | 🔍 |
+| 多模态大模型（6 岗） | <https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B> | 🔍 |
+
+> 🚨 **DJI 必看点**: DJI 是少数同时在 **无人机 + 机器人 + 自动驾驶** 技术栈均领先的独角兽，适合做 SLAM/激光雷达感知/图传无线/世界模型/端到端决策规划 的求职者。
+> **城市分布**: 所有校招岗位都是 **北京 / 上海 / 深圳** 三个城市。
 
 ---
 
@@ -684,6 +727,7 @@
 | 理想汽车 | ✅ functionsids 过滤 | `?project_id=4&functionsids=1` 返 28 个算法岗 (v12) |
 | 滴滴（Moka） | ✅ project 筛 | `#/jobs?project=2027` 返 6 个 (v12) |
 | 快手校招 | ✅ recruitSubProjectCodes | `recruitSubProjectCodes=20271779425607` 74 个 (全快Star), `?keyword=` 已失效 (v18) |
+| 大疆 | ✅ Moka 拓疆者 | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` 138 岗 (v19) |
 | 携程 + 360 + 虎牙 + 鹰角 + 用友 + 网易 + Keep + 飞书 | ✅ 主页完整 | v14 (需进站内搜方向词) |
 | 元戎启行 (Moka) | ✅ Moka | `#/jobs?keyword=X` |
 | 美团系 (大众点评/猫眼/酒旅) | ✅ 共享美团 URL | `?hiringType=4_1&keyword=X` |
@@ -691,7 +735,7 @@
 | 拼多多 | 🏠 careers.pddglobalhr.com/campus/grad | URL 搜索失效，需进站内筛类别 (v17 新域名, 22 岗位) |
 | 得物 | 🏠 dewu.com/career | Moka 404, dewu.com 是营销页 |
 | 小红书 | 🏠 job.xiaohongshu.com/campus/positions | 返 "热招职位", URL 参数被忽略 |
-| 大疆 | 🏠 careers.dji.com/zh-CN/campus/positions | 需点 "查看在招职位" |
+| 大疆 | ✅ Moka 拓疆者 (project=143359) | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` 138 岗, 算法 54 (v19) |
 | 百度 | 🏠 talent.baidu.com | `{"status":"need-login"}` 反爬 |
 | 京东 | 🏠 campus.jd.com/#/jobs | URL 参数被忽略 |
 | 华为 | 🏠 career.huawei.com | **强制登录**, 需 uniportal.huawei.com |

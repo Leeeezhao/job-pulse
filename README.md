@@ -1,5 +1,6 @@
-# job-pulse — 2026 校招算法岗情报站（实测版 v18）
+# job-pulse — 2026 校招算法岗情报站（实测版 v19）
 
+> **v19：大疆校招重测 → Moka 投递系统 + #/jobs?keyword=X 真过滤，54 个算法岗全部可点**
 > **v18：快手校招重测 → v14 `?keyword=X` 已失效；发现 13 个类目码 (J1005 推荐/J1006 广告/...) 真过滤**
 > **v17：拼多多已迁移到 careers.pddglobalhr.com，22 个校招岗位真实列表 (含 AI Infra/大模型算法核心岗)**
 > **v16：小米校招实测 → 飞书 mioffice 系统，URL keywords 搜索真实有效**
@@ -15,7 +16,7 @@
 |---|---|---|
 | ✅ **URL 搜索真实有效** | 6 | 字节 / 美团 / 腾讯 / 知乎 / vivo / 小米(feishu) |
 | ❌ **URL 搜索失效** | 3 | 阿里 / 拼多多 / 滴滴 |
-| 🏠 **校招子站（需站内搜）** | 8 | 百度 / 京东 / 华为 / 理想 / 得物 / 大疆 / 小红书 / 快手 / 小鹏 |
+| 🏠 **校招子站（需站内搜）** | 7 | 百度 / 京东 / 华为 / 理想 / 得物 / 小红书 / 小鹏 |
 
 **重要**：之前 v1/v2 的链接**大量瞎写**——以为 `?keywords=X` 在所有公司都有效。Playwright 实测证明**可用的 8 家**，且**部分公司需要用 project ID / functionsids 代替关键词**。
 
@@ -36,7 +37,7 @@
 | 拼多多 | 🏠 | careers.pddglobalhr.com/campus/grad (v17 新域名, 22 岗位) |
 | 得物 | 🏠 | Moka URL 404, dewu.com/career 是营销页 |
 | 小红书 | 🏠 | URL 参数被忽略 |
-| 大疆 | 🏠 | careers.dji.com 可访问但需点 "查看职位" |
+| 大疆 | ✅ | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` (Moka) |
 | 百度 | 🏠 | talent.baidu.com 反爬 |
 | 京东 | 🏠 | URL 参数被忽略 |
 | 华为 | 🏠 | 强制登录 uniportal.huawei.com |
@@ -52,6 +53,31 @@
 3. 找页面能点击的元素 (“应届校招” tab / “算法与软件” 分类)
 4. 点击后看 URL 怎么变 → 抽参数 (美团 `hiringType=4_1` / 理想 `functionsids` / 滴滴 `project=2027`)
 5. 带关键词的 URL 如果会被忽略 → 改用项目筛 / 分类 ID / 项目 ID
+
+## 🆕 v19 大疆校招实测
+
+**项目名：「2027 拓疆者」校园招聘**（2026.6.25 启动，招 2027 届应届）
+
+URL 模板（**Moka hash 路由**）：
+- **校招全职位（138 岗）**：<https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs>
+- **算法类（54 岗）**：<https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=%E7%AE%97%E6%B3%95>
+- **大模型（6 岗）**：<https://apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B>
+- **Moka Project ID**: 143359 （社会招聘是 170070）
+
+**DJI 独有算法方向**（3 个城市：北京 / 上海 / 深圳）：
+- SLAM 算法工程师（3 岗）
+- GNSS 定位算法工程师（3 岗）
+- 端到端决策规划算法工程师（3 岗）
+- 多模态空间感知算法工程师（3 岗）
+- 图传 AI 算法工程师（上海）
+- 世界模型算法工程师（北京）
+- 激光雷达传感器算法工程师（深圳）
+- 计算机视觉算法工程师（2 岗）
+- 图像算法工程师（2 岗）
+- 多模态大模型算法工程师（6 岗）
+- 大模型推理部署算法工程师（6 岗）
+
+> 🎯 **DJI 推荐**: 如果你做 SLAM / 定位 / 感知 / 自主导航 / 大模型部署，DJI 是国内为数不多在 **无人机 + 机器人 + 自动驾驶** 三栈都领先的公司。
 
 ## 🆕 v18 快手校招重测
 
