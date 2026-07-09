@@ -4,6 +4,50 @@
 
 ---
 
+## 🔗 实测链接汇总（浏览器实测）
+
+### ✅ 可访问 + 有招聘系统（7 家）
+
+| 单位 | URL | 实测 | 算法岗 | 备注 |
+| --- | --- | --- | --- | --- |
+| **招商银行** | [`career.cmbchina.com`](https://career.cmbchina.com/) | ✅ CSR | 搜「算法」>0 | 校招/社招/数字金融训练营 |
+| **交通银行** | [`job.bankcomm.com`](https://job.bankcomm.com/) | ✅ CSR | **AI 算法工程师** 2 岗 | 交银金科, 2026-08-31 截止 |
+| **建设银行** | [`job2.ccb.com`](https://job2.ccb.com/) | ✅ URL 搜索 | 暂无 (当前) | `?keyword=算法` 搜索生效 |
+| **农业银行** | [`career.abchina.com`](https://career.abchina.com/) | ✅ CSR | 暂无最新公告 | 校园/社招/实习生 |
+| **中国石化** | [`job.sinopec.com`](https://job.sinopec.com/) | ✅ CSR | — | 中石化招聘网站 |
+| **南方电网** | [`zhaopin.csg.cn`](https://zhaopin.csg.cn/) | ✅ CSR | — | 首页-中国南方电网 |
+| **中国船舶** | [`cssc.zhaopin.com`](https://cssc.zhaopin.com/) | ✅ 2026届校招 | — | 中国船舶集团2026届校园招聘 |
+
+### ⚠️ 反爬/不可达（浏览器也不行）
+
+| 单位 | URL | 状态 | 替代入口 |
+| --- | --- | --- | --- |
+| 国家电网 | `zhaopin.sgcc.com.cn` | ❌ 412/JS反爬 | 试试 `yingjiesheng.com` 搜"国网" |
+| 中石油 | `zhaopin.cnpc.com.cn` | ❌ 412 | 试试 51job 搜"中石油" |
+| 工商银行 | `career.icbc.com.cn` | ❌ 不可达 | — |
+| 中国银行 | `career.boc.cn` | ❌ 404 | — |
+| 邮储银行 | `career.psbc.com` | ❌ 不可达 | — |
+| 浦发银行 | `career.spdb.com` | ❌ 不可达 | — |
+| 光大银行 | `career.cebbank.com` | ❌ 不可达 | — |
+| 中信银行 | `career.citicbank.com` | ❌ DNS | — |
+| 兴业银行 | `career.cib.com.cn` | ❌ DNS | 51job 2026 链接 404 |
+| 中国移动 | `job.10086.cn` | ❌ 浏览器也超时 | — |
+| 中国电信 | `zhaopin.chinatelecom.com.cn` | ❌ DNS | — |
+| 中国联通 | `hr.chinaunicom.com.cn` | ❌ DNS | — |
+| 国家电投 | `zhaopin.spic.com.cn` | ❌ 503 | — |
+| 中国电科 | `zhaopin.cetc.com.cn` | ❌ 502 | — |
+| 国泰君安 | `www.gtja.com` | ❌ DNS | — |
+| 中科院 | `recruit.cas.cn` | ❌ DNS | — |
+
+### 📌 关键发现
+
+1. **curl 测不通 ≠ 打不开**：交行、建行 curl 都 000，但浏览器能加载完整校招系统（CSR SPA）
+2. **7-8 月是空窗期**：建行/农行有系统但"暂无最新招聘公告"，校招还没开启
+3. **反爬两极分化**：招行/交行/建行/农行浏览器直接可用；国网/中石油/中石化有 WAF
+4. **51job/yingjiesheng 是兜底方案**：大部分央国企走 51job 转发
+
+---
+
 ## 核心特征（与互联网公司不同）
 
 | 维度 | 央国企 | 互联网/AI企业 |
