@@ -1,6 +1,6 @@
-# job-pulse — 2026 校招算法岗情报站（实测版 v21）
+# job-pulse — 2026 校招算法岗情报站（实测版 v23）
 
-> **v21：京东校招实测 → POST API + TGT-顶尖青年技术人才计划 (127 个顶级 AGI 岗)**
+> **v23：小红书校招实测 → POST API + recruitType=campus (332 校园岗 + 144 算法关键词搜索)**
 > **v18：快手校招重测 → v14 `?keyword=X` 已失效；发现 13 个类目码 (J1005 推荐/J1006 广告/...) 真过滤**
 > **v17：拼多多已迁移到 careers.pddglobalhr.com，22 个校招岗位真实列表 (含 AI Infra/大模型算法核心岗)**
 > **v16：小米校招实测 → 飞书 mioffice 系统，URL keywords 搜索真实有效**
@@ -16,7 +16,7 @@
 |---|---|---|
 | ✅ **URL 搜索真实有效** | 6 | 字节 / 美团 / 腾讯 / 知乎 / vivo / 小米(feishu) |
 | ❌ **URL 搜索失效** | 3 | 阿里 / 拼多多 / 滴滴 |
-| 🏠 **校招子站（需站内搜）** | 4 | 理想 / 得物 / 小红书 / 小鹏 |
+| 🏠 **校招子站（需站内搜）** | 3 | 理想 / 得物 / 小鹏 |
 
 **重要**：之前 v1/v2 的链接**大量瞎写**——以为 `?keywords=X` 在所有公司都有效。Playwright 实测证明**可用的 8 家**，且**部分公司需要用 project ID / functionsids 代替关键词**。
 
@@ -36,7 +36,7 @@
 | 阿里 | 🏠 | talent.taotian.com 是项目入口 |
 | 拼多多 | 🏠 | careers.pddglobalhr.com/campus/grad (v17 新域名, 22 岗位) |
 | 得物 | 🏠 | Moka URL 404, dewu.com/career 是营销页 |
-| 小红书 | 🏠 | URL 参数被忽略 |
+| 小红书 | ✅ | `POST job.xiaohongshu.com/websiterecruit/position/pageQueryPosition` (332 校园, 144算法搜索) |
 | 大疆 | ✅ | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` (Moka) |
 | 百度 | ✅ | `talent.baidu.com/jobs/list?projectType=X` (SSR 项目码筛) |
 | 京东 | ✅ | `POST campus.jd.com/api/wx/position/page?type=talent` (API + planId) |
@@ -95,6 +95,69 @@
 | 射频算法高级工程师 / 研究员 | (查详情) |
 
 > 🚨 **重点**：华为校招 API 不需登录。`jobType=2` 是真校招口径。关键词搜索被 server 忽略。
+
+## 🆕 v23 小红书校招实测
+
+**Endpoint 模板**：
+- 入口 SPA：<https://job.xiaohongshu.com/campus/positions>
+- 列表 API：`POST /websiterecruit/position/pageQueryPosition`
+- Body：`{"recruitType":"campus","pageNum":1,"pageSize":50}`
+- 详情 API：`GET /websiterecruit/position/queryPositionDetail?positionId=XXX`
+- 详情 URL SPA：<https://job.xiaohongshu.com/campus/position/PU13651>
+- 项目列表 API：`GET /websiterecruit/position/project/{projectCode}`
+
+**recruitType 字典**：
+
+| recruitType | 含义 | total |
+|---|---|---|
+| `campus` | **校园招聘（全公司）** | **332** ⭐ |
+| `social` | 社会招聘 | 858 |
+| `intern` | 实习 | 246 |
+
+**参数（已验证生效）**：
+
+| 参数 | 说明 | 生效情况 |
+|---|---|---|
+| `recruitType` | campus/social/intern | ✅ 必须 |
+| `positionName` | **关键词搜索** | ✅ 唯一有效搜索 |
+| `jobTypes` / `workplaces` | 类型/城市数组 | ✅ (需 enum code) |
+| `campusRecruitTypes` / `jobProjects` | 校招类型/项目 | ✅ |
+| `keyword` / `name` / `searchText` | 文本搜索 | ❌ |
+
+**重点三类 AI 校园岗**：
+
+| 分类 | 数量 | 说明 |
+|---|---|---|
+| ⭐ REDstar | 16 | 2026校招顶级AI应届岗 |
+| 🏆 Ace顶尖实习生 | 38 | 小红书版 Top Seed |
+| 📋 27届/27-28届/其它实习 | 103 | 含搜索/推荐/AIGC/Agent/风控等 |
+
+**REDstar 16 岗**：基座大模型算法/RL Training Infra/Efficient Inference Infra/大模型应用算法(国际化)/商业广告算法/社区搜索算法/用户理解算法/智能客服算法/电商算法-搜推/NLP与多模态/Dots系列(Post-Training/视觉语言/大语言/高性能AI infra/预训练数据)
+
+**Ace顶尖38岗覆盖**：LLM Agent/后训练/Diffusion LLM/生成式推荐/交互式推荐/广告大模型/AI搜索 Agent/多模态统一模型/多语言翻译/端到端语音/云原生Agent调度/向量索引/多媒体Agent/长期记忆/AI代码还原/GUI Agent/多模态端工程 等
+
+**响应结构**：
+```json
+{
+  "success": true,
+  "data": {
+    "total": 332,
+    "totalPage": 34,
+    "list": [{
+      "positionId": 13651,
+      "positionName": "...",
+      "jobType": "大模型",
+      "duty": "工作职责：...",
+      "qualification": "任职资格：...",
+      "workplace": "上海市",
+      "publishTime": "2026-07-09",
+      "recruitStatus": "in_recruitment"
+    }]
+  }
+}
+```
+
+> 🚨 **重点**：POST API 不需登录。`recruitType=campus` 是真校招口径（含应届+实习）。`positionName=算法` 是真关键词搜索（返 144 个算法岗）。
 
 ## 🆕 v21 京东校招实测
 
