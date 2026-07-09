@@ -13,7 +13,7 @@
 | 🔍 **CSR 浏览器** | 2 | 小鹏 / 得物 |
 | 🏠 **仅站内筛** | 0 | 已清零 🎉 |
 
-**📐 分类索引**：[按公司类型](#-按公司类型分类-44-家) | [按技术栈](#-按技术栈分类) | 🎮 [游戏](data/02-game-companies.md) | 🏥 [医疗AI](data/03-medical-companies.md) | 🏛 [公立医院](data/04-public-hospitals.md) | 🏢 [央国企](data/05-central-soe.md) | 📱 [搜狗微信实测](data/06-sogou-wechat-test.md)
+**📐 分类索引**：[按公司类型](#-按公司类型分类-44-家) | [按技术栈](#-按技术栈分类) | 🎮 [游戏](data/02-game-companies.md) | 🏥 [医疗AI](data/03-medical-companies.md) | 🏛 [公立医院](data/04-public-hospitals.md) | 🏢 [央国企](data/05-central-soe.md) | 📱 [搜狗微信实测](data/06-sogou-wechat-test.md) | 🔥 [2026 热点](data/07-keyword-scan-jul2026.md)
 
 **重要**：之前 v1/v2 的链接**大量瞎写**——以为 `?keywords=X` 在所有公司都有效。Playwright 实测证明**可用的 8 家**，且**部分公司需要用 project ID / functionsids 代替关键词**。
 
