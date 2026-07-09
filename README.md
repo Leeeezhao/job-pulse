@@ -1,5 +1,6 @@
-# job-pulse — 2026 校招算法岗情报站（实测版 v14）
+# job-pulse — 2026 校招算法岗情报站（实测版 v16）
 
+> **v16：小米校招实测 → 飞书 mioffice 系统，URL keywords 搜索真实有效**
 > **v15：添加 7 家游戏/安全/芯片/医疗公司**
 > **v14：扩展 12 家中型企业 + 美团系共享 URL**
 > **v13：发现 OPPO 完整校招系统 + 3 个调度 API**
@@ -12,9 +13,9 @@
 
 | 类型 | 数量 | 公司 |
 |---|---|---|
-| ✅ **URL 搜索真实有效** | 5 | 字节 / 美团 / 腾讯 / 知乎 / vivo |
-| ❌ **URL 搜索失效** | 4 | 阿里 / 拼多多 / 蔚来 / 滴滴 |
-| 🏠 **校招子站（需站内搜）** | 9 | 百度 / 京东 / 华为 / 小米 / 理想 / 得物 / 大疆 / 小红书 / 快手 / 小鹏 |
+| ✅ **URL 搜索真实有效** | 6 | 字节 / 美团 / 腾讯 / 知乎 / vivo / 小米(feishu) |
+| ❌ **URL 搜索失效** | 3 | 阿里 / 拼多多 / 滴滴 |
+| 🏠 **校招子站（需站内搜）** | 8 | 百度 / 京东 / 华为 / 理想 / 得物 / 大疆 / 小红书 / 快手 / 小鹏 |
 
 **重要**：之前 v1/v2 的链接**大量瞎写**——以为 `?keywords=X` 在所有公司都有效。Playwright 实测证明**可用的 8 家**，且**部分公司需要用 project ID / functionsids 代替关键词**。
 
@@ -39,7 +40,7 @@
 | 百度 | 🏠 | talent.baidu.com 反爬 |
 | 京东 | 🏠 | URL 参数被忽略 |
 | 华为 | 🏠 | 强制登录 uniportal.huawei.com |
-| 小米 | 🏠 | 2018 过期数据 |
+| 小米 | ✅ | `xiaomi.jobs.f.mioffice.cn/campus?keywords=X` (v16飞书) |
 | OPPO | ✅ | 完整校招系统, 但 2026 应届未启动 |
 | 快手 | 🏠 | campus.kuaishou.cn 营销页 |
 
@@ -51,6 +52,27 @@
 3. 找页面能点击的元素 (“应届校招” tab / “算法与软件” 分类)
 4. 点击后看 URL 怎么变 → 抽参数 (美团 `hiringType=4_1` / 理想 `functionsids` / 滴滴 `project=2027`)
 5. 带关键词的 URL 如果会被忽略 → 改用项目筛 / 分类 ID / 项目 ID
+
+## 🆕 v16 小米飞书系统实测
+
+小米校招真实投递系统是**飞书（mioffice）**，不是 `hr.xiaomi.com/campus/list`（那个 2018 年就过期了）。
+
+- **飞书投递入口**：<https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR>
+- **URL 模板**：`?keywords={方向}` 真实有效 ✅
+- **招聘项目**：2026届春季校招 / 秋季校招 / 实习生 / 境外校招
+- **职能分类**：软件研发类 / 硬件研发类 / 芯片类 / 运维类 / 产品类 / 运营类 / 市场类 / 职能类 / 销售类 / 商务类
+- 算法岗归类在「软件研发类」下
+- 当前 55 个岗位（2026 春季校招已近尾声，主要是 2027 届实习）
+
+**热门算法方向**（直接在 URL 后加 `&keywords=方向`）：
+- [推荐](https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=%E6%8E%A8%E8%8D%90)
+- [大模型](https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=%E5%A4%A7%E6%A8%A1%E5%9E%8B)
+- [自动驾驶](https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6)
+- [语音](https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=%E8%AF%AD%E9%9F%B3)
+- [NLP](https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=NLP)
+- [计算机视觉](https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89)
+
+**小米独有方向**：小爱同学 / 端侧 AI / 手机影像 / 自动驾驶 — 其他大厂少。
 
 ## 🆕 v14 新增 12 家中型企业
 

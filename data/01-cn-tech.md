@@ -1,13 +1,14 @@
-# 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v3）
+# 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v16）
 
+> **v16：小米校招系统重新实测 → 发现飞书（mioffice）投递系统，URL keywords 搜索真实有效**
 > **v15：添加 7 家中型企业（网易互娱/三七互娱/西山居/叠纸/深信服/摩尔线程/阿里健康）**
-> **实测日期**：2026-07-07
-> **实测公司**：44+ 家（v3-v15 累计）
-> **实测结果**：✅ 12 家 URL 搜索真实有效（含快手、美团系、飞书系、理想 functionsids、Moka 系、字节 project ID），其余 🏠 需进站内搜
+> **实测日期**：2026-07-09
+> **实测公司**：44+ 家（v3-v16 累计）
+> **实测结果**：✅ 13 家 URL 搜索真实有效（新增小米），其余 🏠 需进站内搜
 
 ## ⚠️ 重要说明
 
-通过实际打开浏览器测试（v3-v14 累计 37+ 家公司），**以下 12 家公司 URL 搜索参数真实生效**：
+通过实际打开浏览器测试（v3-v16 累计 38+ 家公司），**以下 13 家公司 URL 搜索参数真实生效**：
 
 | 公司 | 真实 URL 模板 | 实测状态 |
 |---|---|---|
@@ -21,6 +22,7 @@
 | **理想汽车** | `?project_id=4&functionsids={分类ID}` | ✅ v12 实测 (函数 ID 代替关键词) |
 | **滴滴（Moka）** | `#/jobs?project=2027` (项目筛代替关键词) | ✅ v12 实测 |
 | **快手校招** | `#/campus/jobs?recruitSubProjectCodes=20271779425607` | ✅ v14 实测, 0 实习 |
+| **小米（飞书系）** | `?keywords={方向}` | ✅ v16 实测 (飞书 mioffice 系统) |
 | **智谱 / 月之暗面 / MiniMax / 百川（元戎启行等 Moka / 飞书系）** | `#/jobs?keyword={方向}` 或 `?keyword={方向}` | ✅ 实测确认 |
 
 **其他 10+ 家公司 URL 搜索参数被测试证明无效**（关键词被忽略，跳默认列表）。对这些公司，**正确的做法是直接给主页链接**，让用户进首页用站内搜索。
@@ -315,12 +317,34 @@
 
 ---
 
-## 11. 小米 — 🏠 主页=结果页 (Playwright 实测)
+## 11. 小米 — ✅ URL搜索有效 (v16 飞书系统)
 
-**实测结果**：找到 search input 但 fill 超时（可能是动态加载）。
-主页 body 含"算法工程师"等关键词，**主页就是搜索结果页**。
+**v16 实测重大突破**（2026-07-09）：
+- 小米校招**不是** `hr.xiaomi.com/campus/list`（那个是 2018 年过期数据）
+- 真正的投递系统是飞书（mioffice）：**`xiaomi.jobs.f.mioffice.cn/campus/`**
+- URL 参数 `?keywords={方向}` **真实有效** ✅
+- 当前 55 个岗位（2026 春季校招已近尾声，主要是 2027 届实习岗）
+- 招聘项目：2026届春季校招 / 秋季校招 / 实习生 / 境外校招
+- 职能分类：软件研发类 / 硬件研发类 / 芯片类 / 运维类 / 产品类 / 运营类 / 市场类 / 职能类 / 销售类 / 商务类
+- 算法岗归类在「软件研发类」下（无独立「算法类」）
 
-- **校招官网**：<https://hr.xiaomi.com/campus/list>
+- **校招主页（营销页）**：<https://hr.xiaomi.com/campus>（点「立即加入」跳飞书系统）
+- **飞书投递系统**：<https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR>
+- **公众号**：小米招聘
+
+| 方向 | 学历 | 工作地 | JD 关键词 | 链接（实测） | 类型 |
+|---|---|---|---|---|---|
+| 推荐 | 硕 | 北京 | 推荐算法、CTR | <https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=%E6%8E%A8%E8%8D%90> | 🔍 |
+| 大模型 | 硕/博 | 北京 | Agent、LLM、端侧 AI | <https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=%E5%A4%A7%E6%A8%A1%E5%9E%8B> | 🔍 |
+| 自动驾驶 | 硕/博 | 北京/上海 | 感知、决策规划、SLAM | <https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6> | 🔍 |
+| 语音 | 硕/博 | 北京 | ASR/TTS、小爱同学 | <https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=%E8%AF%AD%E9%9F%B3> | 🔍 |
+| NLP | 硕/博 | 北京/武汉 | 对话、小爱、文本理解 | <https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=NLP> | 🔍 |
+| 计算机视觉 | 硕/博 | 北京/上海 | 检测、分割、手机影像 | <https://xiaomi.jobs.f.mioffice.cn/campus/?spread=J7NS6YR&keywords=%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89> | 🔍 |
+
+> ⚠️ 当前（2026-07）春季校招网申期已过（截止 5 月 31 日），搜索结果以 2027 届实习为主。
+> 秋季校招启动后（预计 8-9 月），同样的 URL 模板可以直接用搜索方向词查找正式校招岗位。
+
+> 💡 小爱同学 / 端侧 AI / 手机影像 / 自动驾驶 是小米独有的算法方向，其他大厂少。
 
 ---
 
@@ -598,7 +622,7 @@
 | 百度 | 🏠 talent.baidu.com | `{"status":"need-login"}` 反爬 |
 | 京东 | 🏠 campus.jd.com/#/jobs | URL 参数被忽略 |
 | 华为 | 🏠 career.huawei.com | **强制登录**, 需 uniportal.huawei.com |
-| 小米 | 🏠 hr.xiaomi.com/campus/list | 2018 年过期数据 |
+| 小米 | ✅ | `xiaomi.jobs.f.mioffice.cn/campus/?keywords=X` (v16 飞书系统) |
 | OPPO | ✅ `/university/oppo/campus` (项目入口页, 25 岗) | 2026 应届校招未启动, 只有博士 + 2027 实习 |
 | 网易互娱 (游戏) | ✅ `game.campus.163.com` | 完整校招, body=628 |
 | 三七互娱 (游戏) | ✅ 校招入口 `?c=campus&a=index` | 含 AI类 + 游戏研发类 + 技术开发类 |
