@@ -1,6 +1,6 @@
-# job-pulse — 2026 校招算法岗情报站（实测版 v23）
+# job-pulse — 2026 校招算法岗情报站（实测版 v24）
 
-> **v23：小红书校招实测 → POST API + recruitType=campus (332 校园岗 + 144 算法关键词搜索)**
+> **v24：小鹏校招重测 → CSR 双参数 (467 总 + 116 算法岗)**
 > **v18：快手校招重测 → v14 `?keyword=X` 已失效；发现 13 个类目码 (J1005 推荐/J1006 广告/...) 真过滤**
 > **v17：拼多多已迁移到 careers.pddglobalhr.com，22 个校招岗位真实列表 (含 AI Infra/大模型算法核心岗)**
 > **v16：小米校招实测 → 飞书 mioffice 系统，URL keywords 搜索真实有效**
@@ -16,7 +16,7 @@
 |---|---|---|
 | ✅ **URL 搜索真实有效** | 6 | 字节 / 美团 / 腾讯 / 知乎 / vivo / 小米(feishu) |
 | ❌ **URL 搜索失效** | 3 | 阿里 / 拼多多 / 滴滴 |
-| 🏠 **校招子站（需站内搜）** | 3 | 理想 / 得物 / 小鹏 |
+| 🏠 **校招子站（需站内搜）** | 2 | 理想 / 得物 |
 
 **重要**：之前 v1/v2 的链接**大量瞎写**——以为 `?keywords=X` 在所有公司都有效。Playwright 实测证明**可用的 8 家**，且**部分公司需要用 project ID / functionsids 代替关键词**。
 
@@ -36,7 +36,8 @@
 | 阿里 | 🏠 | talent.taotian.com 是项目入口 |
 | 拼多多 | 🏠 | careers.pddglobalhr.com/campus/grad (v17 新域名, 22 岗位) |
 | 得物 | 🏠 | Moka URL 404, dewu.com/career 是营销页 |
-| 小红书 | ✅ | `POST job.xiaohongshu.com/websiterecruit/position/pageQueryPosition` (332 校园, 144算法搜索) |
+| 小红书 | ✅ | `POST job.xiaohongshu.com/websiterecruit/position/pageQueryPosition` (332 校园岗) |
+| 小鹏 | 🔍 | `?keywords=X&keyword=X` CSR, 需 Playwright (467总 116算法) |
 | 大疆 | ✅ | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` (Moka) |
 | 百度 | ✅ | `talent.baidu.com/jobs/list?projectType=X` (SSR 项目码筛) |
 | 京东 | ✅ | `POST campus.jd.com/api/wx/position/page?type=talent` (API + planId) |
@@ -95,6 +96,32 @@
 | 射频算法高级工程师 / 研究员 | (查详情) |
 
 > 🚨 **重点**：华为校招 API 不需登录。`jobType=2` 是真校招口径。关键词搜索被 server 忽略。
+
+## 🆕 v24 小鹏校招重测
+
+**核心发现**：v12 "?keyword=X" 已不可靠。小鹏飞书系统是 **CSR（全 JavaScript）**，curl 拿 185KB 空壳。必须用 Playwright，搜索后 URL 更新为 `?keywords=X&keyword=X`（双参才能筛）。
+
+**Endpoint 模板**：
+- 入口：<https://xiaopeng.jobs.feishu.cn/campus/position/list>
+- 搜索：`?keywords=算法&keyword=算法&current=1&limit=10&category=&location=&project=&type=&job_hot_flag=&functionCategory=&tag=`
+- 详情：<https://xiaopeng.jobs.feishu.cn/campus/position/{id}/detail>
+
+**岗位统计**：
+
+| 搜索词 | 总数 |
+|---|---|
+| 无过滤 | 467 |
+| 算法 | 116 |
+| 大模型 | 78 |
+
+**重点算法岗位（116 岗覆盖）**：
+- 🏎️ **自动驾驶 RL**：强化学习算法 / Embodied Agent RL / RLHF-RLAIF / offline RL
+- 🚗 **自动驾驶 VLA**：VLA大模型算法 / 感知规控大模型 / 视觉-BEV感知
+- 🤖 **机器人（小鹏机器人中心）**：具身智能灵巧操作 / 运动控制RL / 机器人VLA / 空间智能
+- 🖥️ **自动驾驶仿真**：场景生成+泛化 / 评价指标 / 分布式仿真调度
+- ☁️ **计算平台**：数据平台 / 分布式训练（Spark/Flink/Ray/PyTorch）
+
+> 🚨 **重点**：飞书系最难自动化的一家。`keywords` + `keyword` 双参数。必须 Playwright。岗位 116 覆盖自动驾驶 RL/VLA + 机器人具身智能两大核心方向。
 
 ## 🆕 v23 小红书校招实测
 

@@ -1,6 +1,6 @@
-# 国内互联网大厂 + AI 独角兽 - 算法岗校招(实测版 v23)
+# 国内互联网大厂 + AI 独角兽 - 算法岗校招(实测版 v24)
 
-> **v23:小红书校招实测 → POST API + recruitType=campus (332 校园岗 + 144 算法关键词搜索)**
+> **v24:小鹏校招重测 → CSR 双参数 (467 总 + 116 算法岗)**
 > **v20:百度校招重测 → SSR 项目码筛生效;发现 AIDU 项目 (projectType=3, 11 个顶级 AI 岗)**
 > **v19:大疆校招实测 → 发现 Moka 投递系统 + #/jobs?keyword=X 真过滤,54 个算法岗全部可点**
 > **v18:快手校招重测 → v14 的 `?keyword=X` 已失效,需站内点类目码筛(新增项目码字典)**
@@ -8,7 +8,7 @@
 > **v16:小米校招系统重新实测 → 发现飞书(mioffice)投递系统,URL keywords 搜索真实有效**
 > **v15:添加 7 家中型企业(网易互娱/三七互娱/西山居/叠纸/深信服/摩尔线程/阿里健康)**
 > **实测日期**:2026-07-09
-> **实测公司**:44+ 家(v3-v23 累计)
+> **实测公司**：44+ 家（v3-v24 累计）
 > **实测结果**:✅ 16 家 URL 搜索/项目码/API 有效 + 🏠 快手站内类目码筛 + 🏠 拼多多站内筛
 
 ## ⚠️ 重要说明
@@ -523,17 +523,81 @@
 
 ---
 
-## 10b. 小鹏 - ✅ URL搜索有效 (v12 飞书系)
+## 10b. 小鹏 - ✅ CSR URL搜索 (v24 重测)
 
-**v12 实测结果**:`?keyword=推荐` 返 2 个算法相关岗位(0 实习)。主页还有"自动驾驶 / 智能座舱 / 数据智能"等 12 个板块但 URL 不能锁板块。
+**v24 重测**(2026-07-09):v12 "?keyword=X" 已**不可靠**。小鹏飞书系统是 CSR(JavaScript 渲染),URL 参数 `?keyword=X` 被 SPA 忽略。**有效方式**:用浏览器在搜索框输入后 URL 更新为 `?keywords=X&keyword=X`,两个参数都传才能生效。curl 只能拿到 185KB SSR 壳
 
-- **校招官网**:<https://xiaopeng.jobs.feishu.cn?keyword=%E6%8E%A8%E8%8D%90>
+### Endpoint 模板
+
+- **校招 SPA 入口**:<https://xiaopeng.jobs.feishu.cn/campus/position/list>
+- **带关键词搜索**:
+  ```
+  /campus/position/list?keywords=算法&keyword=算法&category=&location=&project=&type=&job_hot_flag=&current=1&limit=10&functionCategory=&tag=
+  ```
+- **详情 URL**:<https://xiaopeng.jobs.feishu.cn/campus/position/{id}/detail>
+
+### 搜索参数字典(CSR 渲染,curl 不可用)
+
+| 参数 | 说明 | 生效情况 |
+|---|---|---|
+| `keywords` | 关键词搜索 | ✅ 飞书搜索框触发 |
+| `keyword` | 关键词搜索(冗余) | ✅ 双参数才能生效 |
+| `category` | 职位类别筛选 (研发/汽车销售/...) | ✅ 侧栏筛 |
+| `location` | 城市筛选 | ✅ 侧栏筛 |
+| `project` | 项目筛选 | ✅ |
+| `type` | 正式/实习 | ✅ |
+| `current` | 页码 (from 1) | ✅ |
+| `limit` | 每页数量 | ✅ |
+| `functionCategory` | 功能分类 | ✅ |
+| `job_hot_flag` | 热招标记 | ✅ |
+| `tag` | 标签 | ✅ |
+
+### 岗位总计 + 搜索统计
+
+| 搜索词 | 总数 |
+|---|---|
+| 无过滤 | 467 |
+| 算法 | 116 |
+| 大模型 | 78 |
+
+### 467 个总岗位(按类别)+ 116 算法岗
+
+**筛选条件**:
+- 职位类别(8 大类):研发 / 汽车销售与服务 / 产品策划项目 / 设计 / 职能支持 / 汽车制造 / 市场
+- 城市(10):广州 / 上海 / 深圳 / 北京 / 武汉 / 肇庆 / 东莞 / 厦门 等
+- 项目类型:正式 / 实习
+
+**重点算法岗位(Page 1 样例)**:
+
+| 岗位名 | 工作地 | 类型 | 方向 |
+|---|---|---|---|
+| 强化学习算法实习生 | 上海 | 实习 | 自动驾驶RL |
+| 具身智能灵巧操作算法实习生 | 深圳 | 实习 | 机器人操作 |
+| 【27届校招】算法工程师(自动驾驶仿真) | 上海 | 正式 | 仿真+评价算法 |
+| Embodied Agent RL算法实习生 | 京/沪 | 实习 | RLHF/RLAIF+Agent |
+| 【27届校招】VLA大模型算法工程师 | 上海 | 正式 | 自动驾驶VLA |
+| 【27届暑期】具身智能灵巧手算法实习生 | 深圳 | 实习 | 机器人RL |
+| 【27届校招】空间智能算法工程师 | 广州/上海 | 正式 | 3D重建+空间理解 |
+| 【27届校招】VLA大模型算法工程师 | 广深沪等4城 | 正式 | 端到端感知+规控大模型 |
+| 运动控制算法实习生(强化学习方向) | 深圳 | 实习 | 机器人运动RL |
+| 【27届校招】机器人VLA大模型算法工程师 | 广深沪 | 正式 | 机器人VLA |
+
+### 关键领域分布(116 算法岗覆盖)
+
+- **自动驾驶 RL**:强化学习算法 / Embodied Agent RL / RLHF-RLAIF / offline RL
+- **自动驾驶 VLA**:VLA大模型算法 / 感知规控大模型 / 端到端模型
+- **机器人(小鹏机器人中心)**:具身智能灵巧操作 / 运动控制RL / 机器人VLA / 空间智能
+- **自动驾驶仿真**:场景生成+泛化 / 评价指标 / 分布式仿真调度
+- **感知**:BEV感知 / 道路拓扑 / 视觉/空间智能
+- **计算平台**:数据平台 / 分布式训练(Spark/Flink/Ray/PyTorch)
+
+> 🚨 **重点**:小鹏飞书系统是所有飞书校招中最**难自动化**的。CSR 渲染 + 双参数(keywords/keyword)+ 反爬。curl 拿 185KB 空壳,必须用 Playwright。算法岗 116 个覆盖自动驾驶 RL/VLA + 机器人具身智能两大核心方向。
 
 | 方向 | 链接 | 类型 |
 |---|---|---|
-| 推荐/算法 | <https://xiaopeng.jobs.feishu.cn?keyword=%E6%8E%A8%E8%8D%90> | 🔍 |
-| 自动驾驶 | <https://xiaopeng.jobs.feishu.cn?keyword=%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6> | 🔍 |
-| 智能机器人 | <https://xiaopeng.jobs.feishu.cn?keyword=%E6%9C%BA%E5%99%A8%E4%BA%BA> | 🔍 |
+| 校招主页 | <https://xiaopeng.jobs.feishu.cn/campus/position/list> | 🔍 |
+| 116 算法岗 | `?keywords=算法&keyword=算法` (需浏览器) | 🔍 |
+| 78 大模型岗 | `?keywords=大模型&keyword=大模型` (需浏览器) | 🔍 |
 
 ---
 
@@ -1134,7 +1198,7 @@
 | 知乎 (Moka) | ✅ URL 搜索有效 | `#/jobs?keyword=X` |
 | vivo | ✅ URL 搜索有效 | URL 不变, 前端 JS 搜索 (搜"推荐"返回 33 个, 搜"NLP"返回 16 个) |
 | 蔚来(飞书系) | ✅ URL 搜索有效 | `?keyword=X` (v12, 搜"推荐"返 15 个, 1 实习) |
-| 小鹏(飞书系) | ✅ URL 搜索有效 | `?keyword=X` (v12) |
+| 小鹏(飞书系) | 🔍 CSR 双参数 | `?keywords=算法&keyword=算法` 需 Playwright (v24) |
 | 理想汽车 | ✅ functionsids 过滤 | `?project_id=4&functionsids=1` 返 28 个算法岗 (v12) |
 | 滴滴(Moka) | ✅ project 筛 | `#/jobs?project=2027` 返 6 个 (v12) |
 | 快手校招 | ✅ recruitSubProjectCodes | `recruitSubProjectCodes=20271779425607` 74 个 (全快Star), `?keyword=` 已失效 (v18) |
@@ -1148,9 +1212,10 @@
 | 小红书 | ✅ POST API | `POST job.xiaohongshu.com/websiterecruit/position/pageQueryPosition` (332 校园) |
 | 大疆 | ✅ Moka 拓疆者 (project=143359) | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` 138 岗, 算法 54 (v19) |
 | 百度 | ✅ SSR 项目码 | `talent.baidu.com/jobs/list?projectType=X` 生效;AIDU=11/校招=145 (v20) |
-| 京东 | ✅ POST API | `POST campus.jd.com/api/wx/position/page?type=X` + planId；TGT=127 (v21) |
+| 京东 | ✅ POST API | `POST campus.jd.com/api/wx/position/page?type=X` + planId;TGT=127 (v21) |
 | 华为 | ✅ GET API | `GET career.huawei.com/reccampportal/services/portal/portalpub/getJob/newHr/page/50/1?jobType=2` (198 校招) (v22) |
 | 小红书 | ✅ POST API | `POST job.xiaohongshu.com/websiterecruit/position/pageQueryPosition` (332 校园) (v23) |
+| 小鹏 | 🔍 | `?keywords=算法&keyword=算法` 需 Playwright CSR (467总 116算法) (v24) |
 | 京东 | 🏠 campus.jd.com/#/jobs | URL 参数被忽略 |
 | 华为 | ✅ GET API | `GET /reccampportal/services/portal/portalpub/getJob/newHr/page/50/1?jobType=2` (198 校招, 36 AI) (v22) |
 | 小米 | ✅ | `xiaomi.jobs.f.mioffice.cn/campus/?keywords=X` (v16 飞书系统) |
