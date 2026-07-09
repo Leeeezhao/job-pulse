@@ -1,14 +1,15 @@
-# 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v20）
+# 国内互联网大厂 + AI 独角兽 — 算法岗校招（实测版 v21）
 
-> **v20：百度校招重测 → SSR 项目码篏生效；发现 AIDU 项目 (projectType=3, 11 个顶级 AI 岗)**
+> **v21：京东校招实测 → POST API + TGT-顶尖青年技术人才计划 (127 个顶级 AGI 岗)**
+> **v20：百度校招重测 → SSR 项目码筛生效；发现 AIDU 项目 (projectType=3, 11 个顶级 AI 岗)**
 > **v19：大疆校招实测 → 发现 Moka 投递系统 + #/jobs?keyword=X 真过滤，54 个算法岗全部可点**
-> **v18：快手校招重测 → v14 的 `?keyword=X` 已失效，需站内点类目码篏（新增项目码字典）**
+> **v18：快手校招重测 → v14 的 `?keyword=X` 已失效，需站内点类目码筛（新增项目码字典）**
 > **v17：拼多多迁移到新域名 careers.pddglobalhr.com，22 个岗位全部找到（含云弧计划核心算法岗）**
 > **v16：小米校招系统重新实测 → 发现飞书（mioffice）投递系统，URL keywords 搜索真实有效**
 > **v15：添加 7 家中型企业（网易互娱/三七互娱/西山居/叠纸/深信服/摩尔线程/阿里健康）**
 > **实测日期**：2026-07-09
-> **实测公司**：44+ 家（v3-v20 累计）
-> **实测结果**：✅ 15 家 URL 搜索/项目码有效 + 🏠 快手站内类目码筛 + 🏠 拼多多站内筛
+> **实测公司**：44+ 家（v3-v21 累计）
+> **实测结果**：✅ 16 家 URL 搜索/项目码/API 有效 + 🏠 快手站内类目码筛 + 🏠 拼多多站内筛
 
 ## ⚠️ 重要说明
 
@@ -28,6 +29,7 @@
 | **快手校招** | `#/campus/jobs?recruitSubProjectCodes=20271779425607` | ✅ v14 项目筛 (74 岗, 0 实习) / v18 `?keyword=` 失效，改站内类目码 |
 | **大疆校招** | `#/jobs?keyword={方向}` | ✅ v19 Moka (拓疆者, 138 岗, keyword=算法 返 54) |
 | **百度校招** | `?projectType=1/3/4` | ✅ v20 SSR 项目码；AIDU=11/校招=145/管培=12 |
+| **京东校招** | `POST /api/wx/position/page` | ✅ v21 POST API；TGT 127 顶级 AI 岗 (天才计划 56 + 实习生 71) |
 | **小米（飞书系）** | `?keywords={方向}` | ✅ v16 实测 (飞书 mioffice 系统) |
 | **智谱 / 月之暗面 / MiniMax / 百川（元戎启行等 Moka / 飞书系）** | `#/jobs?keyword={方向}` 或 `?keyword={方向}` | ✅ 实测确认 |
 
@@ -227,15 +229,78 @@
 
 ---
 
-## 6. 京东 — 未实测
+## 6. 京东 — ✅ POST API + 人才专项 (v21 重测)
 
-- **校招官网**：<https://campus.jd.com/jobs>
+**v21 重测重大发现**（2026-07-09）：v3 "未实测"是错的。京东校招 SPA **不需要登录**就能调 `POST /api/wx/position/page` 获取全部岗位。直接调 API 拿到 16 应届 + 127 TGT 顶级 + 106 实习。
 
-| 方向 | 链接（待实测） |
+### 项目清单 (顶级 AI 人才项目)
+
+| type | planId | planName | 岗位数 |
+|---|---|---|---|
+| `talent` | **47** | **TGT-顶尖青年技术天才计划** | **56 岗** ⭐ |
+| `talent` | **55** | **TGT-顶尖青年技术实习生** | **71 岗** ⭐ |
+| `present` | 52 | JDS-新星计划 | 0 |
+| `present` | 54 | 新锐之星 | ? |
+| `present` | 57 | TET-管理培训生 | ? |
+| `internship` | 45 | JD YOUNG-实习生计划 | ? |
+| `internship` | 51 | 新锐之星实习生 | ? |
+
+**关键调用**:
+- 入口 SPA: <https://campus.jd.com/#/jobs> (需要 hash，否则 302 到登录)
+- POST endpoint: `https://campus.jd.com/api/wx/position/page?type={type}` (type=talent/present/internship)
+- POST payload (1选):
+  ```json
+  {"pageSize": 100, "pageIndex": 0, "parameter": {"positionName": "大模型", "planIdList": [], "jobDirectionCodeList": [], "workCityCodeList": [], "positionDeptList": []}}
+  ```
+
+**API 响应字段**:
+- `totalNumber`: 总数 (如 TGT=127, 应届=16, 实习=106)
+- `items[]`: 岗位列表 (包含 `positionName`, `reqId`, `publishTime`, `workCity`)
+- `parameter.positionName`: 关键词过滤 (⚠️ 只支持粗粒度 - "大模型" "AI" 等)
+- `parameter.planIdList[]`: 限定项目 (如 `[47]` = TGT-天才计划)
+
+### TGT-顶尖青年技术人才项目 (百度版 AIDU / Top Seed) 127 岗关键词统计
+
+- **大模型 63 岗** (47% 全部与大模型相关)
+- 多模态 25 / 智能体 18 / 训练 16 / 具身 14 / 强化学习 11 / 推理 11
+- 医疗 8 / 机器人 6 / Agent 6 / VLA 6 / 后训练 5 / 语音 5 / 物流 5
+- 世界模型 4 / 广告 4 / 代码 4 / LLM 4 / 对话 4 / 预训练 3 / 推荐 3
+- 自动驾驶 2
+
+### 重点顶级岗位示例 (TGT-天才计划 56 岗)
+
+- 具身仿真与世界模型研究
+- 多模态理解大模型全流程架构探索
+- 机器人移动操作全身协同控制算法研究
+- 面向电商大模型预训练与后训练的探索研究
+- 面向复杂场景的自动驾驶端到端大模型与强化学习的技术研究
+- 空间智能大模型创新与应用
+- 新一代大模型推理技术优化研究
+- 千亿级大语言模型架构与分布式研究
+- ... (56 个均为顶级 AI 研究岗)
+
+### 字典 endpoint (类目、地区、项目)
+
+| endpoint | 用途 |
 |---|---|
-| 推荐 | <https://campus.jd.com/jobs?keyword=%E6%8E%A8%E8%8D%90> |
-| NLP | <https://campus.jd.com/jobs?keyword=NLP> |
-| 大模型 | <https://campus.jd.com/jobs?keyword=%E5%A4%A7%E6%A8%A1%E5%9E%8B> |
+| `POST /api/wx/position/dict?type=present` | 类目/城市字典 |
+| `GET /api/wx/position/getProjectList` | 项目字典 (含 planId) |
+
+- **postList 字典**：01=采销与物流 / 02=技术 / 03=产品 / 04=运营 / 05=市场与商务 / 06=设计 / 07=职能 / 08=工程 / 09=保险及金融 / 10=健康 / 30=基层管理 / 31=一线销售 / 32=一线职能 / 33=一线专业 / 15=TET
+- **workPlace 字典**：269 个城市代码 (以 00001 北京为准)
+
+- **校招 SPA**：<https://campus.jd.com/#/jobs>
+- **TGT 顶尖青年技术天才计划** (推荐 ⭐)：<https://campus.jd.com/#/jobs> (站内 选 顶尖青年技术天才计划)
+- **TGT 顶尖青年技术实习生** (推荐 ⭐)：<https://campus.jd.com/#/jobs> (站内 选 顶尖青年技术实习生)
+
+| 方向 | 链接 | 类型 |
+|---|---|---|
+| TGT 顶尖青年技术人才 (56 应届 + 71 实习 = 127 顶级 AI) | <https://campus.jd.com/#/jobs> | 🔍 |
+| 应届生 (16 岗) | <https://campus.jd.com/#/jobs> | 🔍 |
+| 实习生 (106 岗) | <https://campus.jd.com/#/jobs> | 🔍 |
+
+> 🚨 **重点**：京东 TGT = 顶级 AI 人才专项（对标字节 Top Seed / 百度 AIDU / 拼多多云弧），127 个核心 AI 研究岗全可用 SPA 站内筛 + API 直调拿到。关键词位置过滤是 API 参数（`positionName`），但只能"部分匹配"，多个词组合需多次调用。
+> **核心 API 唯一不可跨域保护**：必须 `Origin: https://campus.jd.com` + `Referer: https://campus.jd.com/`，跨域会被 403 拒绝。
 
 ---
 
@@ -807,6 +872,7 @@
 | 小红书 | 🏠 job.xiaohongshu.com/campus/positions | 返 "热招职位", URL 参数被忽略 |
 | 大疆 | ✅ Moka 拓疆者 (project=143359) | `apply.careers.dji.com/campus-recruitment/dji/143359#/jobs?keyword=X` 138 岗, 算法 54 (v19) |
 | 百度 | ✅ SSR 项目码 | `talent.baidu.com/jobs/list?projectType=X` 生效；AIDU=11/校招=145 (v20) |
+| 京东 | ✅ POST API | `POST campus.jd.com/api/wx/position/page?type=X` + planId；TGT=127 (v21) |
 | 京东 | 🏠 campus.jd.com/#/jobs | URL 参数被忽略 |
 | 华为 | 🏠 career.huawei.com | **强制登录**, 需 uniportal.huawei.com |
 | 小米 | ✅ | `xiaomi.jobs.f.mioffice.cn/campus/?keywords=X` (v16 飞书系统) |
