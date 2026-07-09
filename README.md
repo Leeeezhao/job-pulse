@@ -1,7 +1,7 @@
-# job-pulse — 2026 校招算法岗情报站（实测版 v27）
+# job-pulse — 2026 校招算法岗情报站（实测版 v29）
 
-> **v26：理想校招重测 → REST API + 双分类索引**
-> **v27：游戏公司批量摸底 → 17家 (+12 家 Moka 系统)**
+> **v28：搜狗微信校招监控实测报告**
+> **v29：2026 校招热点情报扫描（云弧/TGT/REDstar/具身智能）**
 > **实测日期**：2026-07-09
 > **方法**：curl API / Playwright 浏览器实测，每家公司验证 URL/API/CSR 真实有效
 
@@ -14,6 +14,7 @@
 | 🏠 **仅站内筛** | 0 | 已清零 🎉 |
 
 **📐 分类索引**：[按公司类型](#-按公司类型分类-44-家) | [按技术栈](#-按技术栈分类) | 🎮 [游戏](data/02-game-companies.md) | 🏥 [医疗AI](data/03-medical-companies.md) | 🏛 [公立医院](data/04-public-hospitals.md) | 🏢 [央国企](data/05-central-soe.md) | 📱 [搜狗微信实测](data/06-sogou-wechat-test.md) | 🔥 [2026 热点](data/07-keyword-scan-jul2026.md)
+**📝 笔试真题库**：[拼多多](interviews/pdd/README.md) | 其他公司待补
 
 **重要**：之前 v1/v2 的链接**大量瞎写**——以为 `?keywords=X` 在所有公司都有效。Playwright 实测证明**可用的 8 家**，且**部分公司需要用 project ID / functionsids 代替关键词**。
 
